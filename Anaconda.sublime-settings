@@ -1,0 +1,14 @@
+{
+    "complete_parameters": true,
+    "complete_all_parameters": true,
+    "anaconda_linting": false,
+
+    "enable_signatures_tooltip": true,
+    "disable_anaconda_completion": true,
+    "suppress_word_completions": true,
+    "suppress_explicit_completions": true,
+
+      "disable_anaconda_completion": true,
+      "display_signatures": false,
+
+}

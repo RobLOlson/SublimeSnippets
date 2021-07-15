@@ -1,0 +1,37 @@
+{
+	"added_words":
+	[
+		"sqlalchemy",
+		"metadata"
+	],
+	"auto_complete": true,
+	"auto_complete_delay": 50,
+	"bold_folder_labels": true,
+	"dictionary": "Packages/Language - English/en_US.dic",
+	"ensure_newline_at_eof_on_save": true,
+	"font_size": 11,
+	"hardware_acceleration": "opengl",
+	"ignored_packages":
+	[
+		"NeoVintageous",
+		"Six",
+		"Vintage",
+		"Vintageous",
+	],
+	"ignored_words":
+	[
+		"restaurantmenu",
+		"sqlite"
+	],
+	"neovintageous_build_version": 11100,
+	"rulers":
+	[
+		72,
+		79
+	],
+	"scroll_past_end": true,
+	"tab_size": 4,
+	"translate_tabs_to_spaces": true,
+	"trim_trailing_white_space_on_save": true,
+	"word_wrap": "true",
+}

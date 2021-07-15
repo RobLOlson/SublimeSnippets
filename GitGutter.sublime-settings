@@ -1,0 +1,8 @@
+// GitGutter Settings - User
+{
+    "show_line_annotation": true,
+    "non_blocking" : "true",
+    "live_mode" : "true",
+    "debounce_delay": 100,
+    "line_annotation_text": "{{line_author}} ({{line_author_age}}) · {{line_summary}}",
+}

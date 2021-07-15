@@ -1,0 +1,32 @@
+{
+	"bootstrapped": true,
+	"in_process_packages":
+	[
+	],
+	"installed_packages":
+	[
+		"AutoHotkey",
+		"Browser Sync",
+		"FindKeyConflicts",
+		"Git",
+		"GitGutter",
+		"JavaScript Enhancements",
+		"MarkdownPreview",
+		"NeoVintageous",
+		"Package Control",
+		"requirementstxt",
+		"SideBarEnhancements",
+		"SublimeLinter",
+		"SublimeLinter-contrib-yamllint",
+		"SublimeLinter-csslint",
+		"SublimeLinter-jshint",
+		"SublimeLinter-json",
+		"SublimeLinter-pylint",
+		"SublimeLinter-pyyaml",
+		"SublimeREPL",
+		"Tabnine",
+		"tern_for_sublime",
+		"ToggleNeoVintageous",
+		"VintageLines",
+	],
+}
