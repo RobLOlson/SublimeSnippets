@@ -1,0 +1,31 @@
+<snippet>
+    <content><![CDATA[
+from flask.cli import with_appcontext
+from flask_login import (
+    UserMixin,
+    LoginManager,
+    current_user,
+    login_required,
+    login_user,
+    logout_user,
+)
+# Flask Session management setup
+login_manager = LoginManager()
+login_manager.init_app(app)
+
+class User(UserMixin):
+    def __init__(self, id_, name, email):
+        self.id = id_
+        self.name = name
+        self.email = email
+
+@login_manager.user_loader
+def load_user(user_id):
+    return User.get(user_id)
+# End of session management
+]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+    <tabTrigger>flaskloginboilerplate</tabTrigger>
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <!-- <scope>source.python</scope> -->
+</snippet>

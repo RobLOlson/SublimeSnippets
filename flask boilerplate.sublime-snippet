@@ -1,0 +1,13 @@
+<snippet>
+    <content><![CDATA[
+from flask import Flask, render_template, request, redirect, url_for, flash, jsonify
+app = Flask(__name__)
+
+if __name__ == '__main__':
+    app.debug = True
+    app.secret_key = 'super_secret_key'
+    app.run(host='0.0.0.0', port=5000)
+]]></content>
+    <tabTrigger>flaskboilerplate</tabTrigger>
+    <scope>source.python</scope>
+</snippet>

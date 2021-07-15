@@ -1,0 +1,7 @@
+<snippet>
+    <content><![CDATA[
+${1:submitted} = bottle.request.forms.get("${2:input_name}")
+]]></content>
+    <tabTrigger>bottle.form</tabTrigger>
+    <scope>source.python</scope>
+</snippet>

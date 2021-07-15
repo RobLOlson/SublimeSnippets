@@ -1,0 +1,56 @@
+<snippet>
+    <content><![CDATA[
+import os
+
+# FLASK DANCE IMPORTS
+from flask import Flask, redirect, url_for
+from flask_dance.contrib.google import make_google_blueprint
+from flask_dance.contrib.google import google as goog
+
+
+# FLASK DANCE BOILERPLATE
+goog_auth_id = "Get-This-ID-From-????"
+goog_auth_secret = "Get-This-Secret-From-????"
+goog_blueprint = make_google_blueprint(client_id=goog_auth_id,
+                                       client_secret=goog_auth_secret,
+                                       redirect_url="https://localhost:8080/",
+                                       )
+
+app.register_blueprint(goog_blueprint, url_prefix="/login")
+os.environ["OAUTHLIB_INSECURE_TRANSPORT"] = '1'
+# END FLASK DANCE BOILERPLATE
+
+
+# FLASK DANCE EXAMPLES
+@app.route("/login")
+def index():
+
+    if not google.authorized:
+
+        return redirect(url_for("google.login"))
+
+    resp = goog.get("/oauth2/v1/userinfo")
+
+    assert resp.ok, resp.text
+
+    return "You are {email} on Google".format(email=resp.json()["email"])
+
+@app.route("/logout")
+def logout():
+    token = goog_blueprint.token["access_token"]
+    resp = goog.post(
+        "https://accounts.google.com/o/oauth2/revoke",
+        params={"token": token},
+        headers={"Content-Type": "application/x-www-form-urlencoded"}
+    )
+    assert resp.ok, resp.text
+    session.pop('user', None)
+    del goog_blueprint.token  # Delete OAuth token from storage
+    return redirect("/")
+
+]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+    <tabTrigger>flaskdanceboilerplate</tabTrigger>
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <!-- <scope>source.python</scope> -->
+</snippet>

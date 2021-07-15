@@ -1,0 +1,13 @@
+<snippet>
+    <content><![CDATA[
+@bottle.route(${1:'/restricted'})
+def ${2:restricted_area}():
+    username = bottle.request.get_cookie("account", secret='some-secret-key')
+    if username:
+        return f"Hello {username}. Welcome back."
+    else:
+        bottle.redirect("/login")
+]]></content>
+    <tabTrigger>bottle.redirect</tabTrigger>
+    <scope>source.python</scope>
+</snippet>

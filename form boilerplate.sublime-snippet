@@ -1,0 +1,35 @@
+<snippet>
+    <content><![CDATA[
+<form action="${1:/submission_confirmed}" method="POST">
+    <fieldset>
+        <legend>${2:Desired Information}</legend>
+        Text Input:
+        <input type="text" name="name" placeholder="John Doe"><br>
+        <textarea name="textarea" rows="10" cols="30" placeholder="Describe yourself."></textarea><br>
+        <button type='submit'>submit</button>
+    </fieldset>
+</form>
+<form action="/least_used" method="GET" oninput="output.value=field_6.value">
+    <fieldset>
+        <legend>Least Used Inputs</legend>
+        Gender:<br>
+        <input type="radio" name="field_2" value="male">Male<br>
+        <input type='radio' name='field_2' value='female'>Female<br>
+        <select name='field_4'>
+            <option value="brown">Brown</option>
+            <option value="blonde">Blonde</option>
+            <option value="red">Red</option>
+        </select><br>
+        <input type="checkbox" name='field_5' value="Hot">Are you hot?<br>
+        On a scale from 1-10, how hot?
+        <input type="range" id="field_6" name="field_6" min='1' max='10'>
+        <output name="output" for="field_6"></output> <br>
+        Password:<input type='password' name='password'><br>
+    </fieldset>
+</form>
+]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+    <tabTrigger>formboilerplate</tabTrigger>
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <!-- <scope>source.python</scope> -->
+</snippet>

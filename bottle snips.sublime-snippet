@@ -1,0 +1,14 @@
+<snippet>
+    <content><![CDATA[
+${1:bottle.cookie}
+${2:bottle.form}
+${3:bottle.query}
+${4:bottle.redirect}
+${5:bottle.static_file}
+${6:@bottle.route}
+${7:@bottle.get}
+${8:@bottle.post}
+]]></content>
+    <tabTrigger>bottle</tabTrigger>
+    <scope>source.python</scope>
+</snippet>

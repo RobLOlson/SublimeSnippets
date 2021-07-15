@@ -1,0 +1,21 @@
+<snippet>
+    <content><![CDATA[
+import gspread
+from oauth2client.service_account import ServiceAccountCredentials
+
+scope = ["https://spreadsheets.google.com/feeds",
+         'https://www.googleapis.com/auth/spreadsheets',
+         "https://www.googleapis.com/auth/drive.file",
+         "https://www.googleapis.com/auth/drive"]
+
+creds = ServiceAccountCredentials.from_json_keyfile_name("creds.json", scope)
+
+client = gspread.authorize(creds)
+
+spreadsheet = client.open("${1:worksheet_title}")
+worksheet = spreadsheet.worksheet("${2:worksheet_name}")  # Open the spreadhseet
+
+]]></content>
+    <tabTrigger>gspreadboilerplate</tabTrigger>
+    <scope>source.python</scope>
+</snippet>

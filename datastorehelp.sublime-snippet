@@ -1,0 +1,89 @@
+<snippet>
+    <content><![CDATA[
+# --- Storage ---
+task = datastore.Entity(client.key('Task', 'sample_task'))
+task.update({
+    'category': "Personal",
+    'done' : False,
+    'priority' : 4,
+    'description' : 'Learn Datastore',
+})
+client.put(task)
+# OR
+with client.transaction():
+    client.put(task) # PUT SAFELY
+
+
+# --- Retrieval ---
+key = client.key('Task', 'sample_task')
+task = client.get(key)
+
+
+# --- Deletion ---
+task = client.delete(key)
+
+
+# --- Batch Update ---
+task1 = datastore.Entity(client.key('Task', 1))
+
+task1.update({
+    'category': 'Personal',
+    'done': False,
+    'priority': 4,
+    'description': 'Learn Cloud Datastore'
+})
+
+task2 = datastore.Entity(client.key('Task', 2))
+
+task2.update({
+    'category': 'Work',
+    'done': False,
+    'priority': 8,
+    'description': 'Integrate Cloud Datastore'
+})
+
+client.put_multi([task1, task2])
+
+
+# --- Batch Lookup ---
+tasks = client.get_multi(keys)
+
+
+# --- Keys for Compound Entities ---
+key = client.key('TaskList', 'default', 'Task', 'sample_task')
+# Alternatively
+parent_key = client.key('TaskList', 'default')
+key = client.key('Task', 'sample_task', parent=parent_key)
+
+
+# --- Queries ---
+query = client.query(kind='Task')
+query.add_filter('done', '=', False)
+query.add_filter('priority', '>=', 4)
+query.order ['-priority']
+results = list(query.fetch())
+
+
+# --- Ancestor Queries ---
+ancestor = client.key('TaskList', 'default')
+query = client.query(kind='Task', ancestor=ancestor)
+
+
+# --- Key Queries ---
+query.add_filter('__key__', '>', some_key)
+
+# --- Projection ---
+query = client.query(kind='Task')
+query.projection = ['priority', 'percent_complete']
+
+priorities = []
+percent_completes = []
+
+for task in query.fetch():
+    priorities.append(task['priority'])
+    percent_completes.append(task['percent_complete'])
+
+]]></content>
+    <tabTrigger>datastorehelp</tabTrigger>
+    <scope>source.python</scope>
+</snippet>

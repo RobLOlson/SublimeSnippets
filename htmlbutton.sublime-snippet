@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[
+<a href="${2:/}"><button type="button">${1:LABEL}</button></a>
+]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+    <tabTrigger>htmlbutton</tabTrigger>
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <!-- <scope>source.python</scope> -->
+</snippet>

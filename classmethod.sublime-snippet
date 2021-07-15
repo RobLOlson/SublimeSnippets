@@ -1,0 +1,11 @@
+<snippet>
+    <content><![CDATA[
+@classmethod
+def ${1:constructor_name}(cls, ${2:arg}=${3:val}):
+    """return My_Class(params...)"""
+    ${4:pass}
+
+]]></content>
+    <tabTrigger>@classmethod</tabTrigger>
+    <scope>source.python</scope>
+</snippet>

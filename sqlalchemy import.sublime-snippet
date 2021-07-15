@@ -1,0 +1,45 @@
+<snippet>
+    <content><![CDATA[
+# SQLALCHEMY IMPORTS
+from sqlalchemy import Column, ForeignKey, Integer, String
+from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy.orm import relationship, sessionmaker
+from sqlalchemy import create_engine
+from flask_sqlalchemy import SQLAlchemy  # Flask Integration
+
+# SQLALCHEMY BOILERPLATE
+engine = create_engine('${1:sqlite:////tmp/test.db}')
+
+
+# SQLALCHEMY DATABASE BOILERPLATE
+Base = declarative_base()  # NOT NEEDED IN FLASK
+
+
+# FLASK INTEGRATION
+app = Flask(__name__)
+app.config['SQLALCHEMY_DATABASE_URI'] = '${1:sqlite:////tmp/test.db}'
+db = SQLAlchemy(app)
+
+
+
+# DATABASE BOILERPLATE
+class ${2:User}(db.Model):
+    __tablename__ = 'my_${2:restaurant}s'
+
+    id = db.Column(Integer, primary_key=True)
+    username = db.Column(db.String(80), nullable=False)
+
+    def __repr__(self):
+        return f"<${2:User}({self.usename})>"
+
+
+# NOT NEEDED WITH flask_sqlalchemy EXTENSION
+Base.metadata.create_all(engine)
+SQLSession = sessionmaker(bind=engine)
+sql_session = SQLSession()
+
+# END OF SQLALCHEMY DATABASE BOILERPLATE
+]]></content>
+    <tabTrigger>sqlalchemyboilerplate</tabTrigger>
+    <scope>source.python</scope>
+</snippet>

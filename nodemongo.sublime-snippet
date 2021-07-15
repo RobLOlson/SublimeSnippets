@@ -1,0 +1,22 @@
+<snippet>
+    <content><![CDATA[
+var MongoClient = require('mongodb').MongoClient;
+var url = "mongodb+srv://USER:PASSWORD@w3-js-test-skugz.mongodb.net/test?retryWrites=true&w=majority";
+
+MongoClient.connect(url, function(err, db) {
+    if (err) throw err;
+    var dbo = db.db("mydb");
+    var myobj = { name: "Company Inc", address: "2232 road" };
+    dbo.collection("customers").insertOne(myobj, function(err, res)
+    {
+        if (err) throw err;
+        console.log("1 document inserted");
+        db.close()
+    })
+});
+]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+    <tabTrigger>nodemongoboilerplate</tabTrigger>
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <!-- <scope>source.python</scope> -->
+</snippet>

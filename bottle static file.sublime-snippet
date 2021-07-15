@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[
+@bottle.route(${1:'/images/<filename:re:.*\.png>'})
+def ${2:send_png}(filename):
+    return bottle.static_file(filename, root='/path/to/image/files', mimetype='image/png')
+]]></content>
+    <tabTrigger>bottle.static_file</tabTrigger>
+    <scope>source.python</scope>
+</snippet>

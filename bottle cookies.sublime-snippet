@@ -1,0 +1,8 @@
+<snippet>
+    <content><![CDATA[
+${1:cookie_value = bottle.request.cookies.get('identifier', 'default-value')}
+${2:bottle.response.set_cookie('identifier', value)}
+]]></content>
+    <tabTrigger>bottle.cookie</tabTrigger>
+    <scope>source.python</scope>
+</snippet>

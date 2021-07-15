@@ -1,0 +1,22 @@
+<snippet>
+    <content><![CDATA[
+from flask_session import Session
+
+# FLASK_SESSION BOILERPLATE
+SESSION_TYPE = 'sqlalchemy'  # OR 'redis' OR 'mongodb'
+# SESSION_REDIS = "a redis.Redis instance"
+# SESSION_MONGODB = "a pymongo.MongoClient() instance"
+# SESSION_MONGODB_DB = "pymongo collection name"
+# db = SQLAlchemy(app)
+SESSION_SQLALCHEMY = db  # config points at SQLAlchemy() instance
+SESSION_SQLALCHEMY_TABLE = "sessions"
+app.config.from_object(__name__)
+my_sess = Session(app)
+my_sess.app.session_interface.db.create_all()
+
+]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+    <tabTrigger>flasksessionboilerplate</tabTrigger>
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <scope>source.python</scope>
+</snippet>

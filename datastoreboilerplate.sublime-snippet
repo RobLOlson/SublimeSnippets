@@ -1,0 +1,13 @@
+<snippet>
+    <content><![CDATA[
+# GOOGLE'S DATASTORE IMPORT(S)
+from google.cloud import datastore
+
+# GOOGLE'S DATASTORE BOILERPLATE
+datastore_client = datstore.Client()
+
+]]></content>
+    <tabTrigger>datastoreboilerplate</tabTrigger>
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <scope>source.python</scope>
+</snippet>

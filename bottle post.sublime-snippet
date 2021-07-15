@@ -1,0 +1,14 @@
+<snippet>
+    <content><![CDATA[
+@bottle.post(${1:'/login'})
+def ${2:do_login}(name):
+    username = request.forms.get('username')
+    password = request.forms.get('password')
+    if check_login(username, password):
+        return "<p>Your login information was correct.</p>"
+    else:
+        return "<p>Login failed.</p>"
+]]></content>
+    <tabTrigger>@bottle.post</tabTrigger>
+    <scope>source.python</scope>
+</snippet>

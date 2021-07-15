@@ -1,0 +1,11 @@
+<snippet>
+    <content><![CDATA[
+@bottle.route(${1:'/hello/<name:re:[a-z]+>'})
+def ${2:hello}(name):
+    return f'<b>hello {name}</b>!!'
+]]></content>
+    <tabTrigger>@bottle.route</tabTrigger>
+    <scope>source.python</scope>
+</snippet>
+
+

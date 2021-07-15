@@ -1,0 +1,7 @@
+<snippet>
+    <content><![CDATA[
+${1:submitted} = bottle.request.query.get("${2:identifier}")
+]]></content>
+    <tabTrigger>bottle.query</tabTrigger>
+    <scope>source.python</scope>
+</snippet>

@@ -1,0 +1,14 @@
+<snippet>
+    <content><![CDATA[
+class ${1:ExampleTable}(Base):
+    __tablename__ = "${2:my_table}"
+
+    ${3:uid = Column(Integer, primary_key=True)}
+    ${4:name = Column(String(123))}
+
+    def __repr__(self):
+        return f"<Table_Item(id={self.id}, name={self.name})>"
+]]></content>
+    <tabTrigger>sqlalchemy table</tabTrigger>
+    <scope>source.python</scope>
+</snippet>

@@ -1,0 +1,31 @@
+<snippet>
+    <content><![CDATA[
+
+class MenuItem(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(80), nullable=False)
+    description = db.Column(db.Text, nullable=False)
+    pub_date = db.Column(db.DateTime, nullable=False,
+        default=datetime.utcnow)
+
+    restaurant_id = db.Column(db.Integer, db.ForeignKey('restaurant.id'),
+        nullable=False)
+    restaurant = db.relationship('Restaurant',
+        backref=db.backref('menu', lazy=True))
+
+    def __repr__(self):
+        return f'<MenuItem {self.name}>'
+
+
+class Restaurant(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(50), nullable=False)
+
+    def __repr__(self):
+        return f'<Restaurant {self.name}>'
+]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+    <tabTrigger>databaseschema</tabTrigger>
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <scope>source.python</scope>
+</snippet>

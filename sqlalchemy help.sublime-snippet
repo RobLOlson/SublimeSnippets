@@ -1,0 +1,32 @@
+<snippet>
+    <content><![CDATA[
+# print all rows
+for row in session.query(${2:Restaurant})
+   print(row)
+
+# print the the 10 rows with smallest id
+for row in session.query(${2:Restaurant}).order_by(${2:Restaurant}.id)[:10]:
+   print(row)
+
+# print only name & id
+for name, id in session.query(${2:Restaurant}.name, ${2:Restaurant}.id):
+   print(f'{name}, {id}')
+
+print restaurants named McDonalds and Burger King
+for row in session.query(${2:Restaurant}).filter(${2:Restaurant}.name.in_(['McDonalds', 'Burger King'])):
+   print(row)
+
+# gives the number of restaurants named Taco Bell
+session.query(${2:Restaurant}).filter(${2:Restaurant}.name.like("Taco Bell")).count()
+
+
+for row in session.query(User).all():
+for row in session.query(User.name).filter_by(fullname='Ed Jones'):
+for row in query.filter(User.name.in_(['ed', 'wendy', 'jack'])):
+for row in query.filter(User.name != None):
+
+# More details at https://docs.sqlalchemy.org/en/13/orm/tutorial.html
+]]></content>
+    <tabTrigger>sqlalchemyhelp</tabTrigger>
+    <scope>source.python</scope>
+</snippet>

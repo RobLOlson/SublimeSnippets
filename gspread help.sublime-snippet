@@ -1,0 +1,41 @@
+<snippet>
+    <content><![CDATA[
+https://gspread.readthedocs.io/en/latest/api.html
+spreadsheet = client.open("${1:worksheet_title}")  # Open the spreadsheet
+
+sheet = spreadsheet.worksheet("worksheet_title")
+
+data = sheet.get_all_records()  # Get a list of all records
+
+row = sheet.row_values(3)  # Get a specific row
+col = sheet.col_values(3)  # Get a specific column
+cell = sheet.cell(1,2).value  # Get the value of a specific cell
+
+sheet.insert_row([list, of, values], 4)  # Insert the list as a row at index 4
+sheet.append_row([list, of, values], 4)  # Append the list as a row at index 4
+
+sheet.update_cell(2,2, "CHANGED")  # Update one cell
+
+numRows = sheet.row_count  # Get the number of rows in the sheet
+
+for cell in sheet.findall("jim"):
+    print(f"{cell.value} targeted at row #{cell.row}, column #{cell.colun}")
+
+for row in sheet.get_all_records():
+    print(f"Name: {row['name']}\nid: {row['id']}")
+
+spreadsheet.del_worksheet(sheet)
+spreadsheet.add_worksheet("title", num_rows, num_cols)
+
+#list of cells from (1, 1) to (7, 2)
+cell_list = worksheet.range(1, 1, 7, 2)
+
+for cell in cell_list:
+    cell.value = 'O_o'
+
+# Update in batch
+worksheet.update_cells(cell_list)
+]]></content>
+    <tabTrigger>gspreadhelp</tabTrigger>
+    <!-- <scope>source.python</scope> -->
+</snippet>

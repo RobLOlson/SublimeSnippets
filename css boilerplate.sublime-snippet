@@ -1,0 +1,68 @@
+<snippet>
+    <content><![CDATA[
+* {box-sizing: border-box;}
+#logo
+{
+  grid-area: logo;
+}
+header  {
+  grid-area: header;
+  text-align: center;
+}
+nav     {
+  grid-area: nav;
+}
+aside   {
+  grid-area: aside;
+}
+main    {
+  grid-area: main;
+}
+section {
+  grid-area: section;
+}
+footer  {
+  grid-area: footer;
+}
+@media only screen and (min-width: 600px) {
+  body{
+      display: grid;
+      margin: 0vw .5vw;
+      font-family: helvetica;
+      font-weight: semi-bold;
+      grid-template-columns: 10vw 5vw 55vw 29vw;
+      grid-template-rows: 10vw auto auto 10vh;
+      grid-template-areas:
+        "logo header header header"
+        "nav nav main section"
+        "nav nav main aside"
+        "footer footer footer footer";
+  }
+}
+@media only screen and (max-width: 599px) {
+  body{
+      display: grid;
+      margin: 0vw .5vw;
+      font-family: helvetica;
+      font-weight: semi-bold;
+      grid-template-columns: 10vw 89vw;
+      grid-template-rows: 10vw auto auto auto 10vh;
+      grid-template-areas:
+        "logo header"
+        "main main"
+        "section section"
+        "aside aside"
+        "footer footer";
+  }
+}
+
+body > * {
+  border: 1px solid black;
+  border-radius: 1vw;
+  padding: 1vw;
+  background-color: rgba(100, 0, 0, .2);
+}
+]]></content>
+    <tabTrigger>cssboilerplate</tabTrigger>
+    <!-- <scope>source.css</scope> -->
+</snippet>
