@@ -10,15 +10,13 @@
   <title>BASIC CSS GRID</title>
 </head>
 <body>
-  <div class="grid-container">
-    <span id="logo">LOGO</span>
-    <nav>NAVIGATION</nav>
-    <aside>ASIDE</aside>
-    <main>MAIN CONTENT</main>
-    <section>ADVERTISING</section>
-    <footer>FOOTER</footer>
-    <header>HEADER</header>
-  </div>
+  <span id="logo">LOGO</span>
+  <nav>NAVIGATION</nav>
+  <aside>ASIDE</aside>
+  <main>MAIN CONTENT</main>
+  <section>ADVERTISING</section>
+  <footer>FOOTER</footer>
+  <header>HEADER</header>
 </body>
 </html>
 ]]></content>
