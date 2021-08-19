@@ -1,0 +1,15 @@
+<snippet>
+    <content><![CDATA[
+def decorator(func):
+    def wrapper(*args, **kwargs):
+        print(Do work here)
+        val = func(*args, **kwargs)
+        return val
+
+    return wrapper
+]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+    <tabTrigger>decoratortemplate</tabTrigger>
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <scope>source.python</scope>
+</snippet>
