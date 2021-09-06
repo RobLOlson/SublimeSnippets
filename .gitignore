@@ -3,3 +3,4 @@
 !select_to_scope.py
 !*.sublime-settings
 !.gitignore
+!focus_tab.py
