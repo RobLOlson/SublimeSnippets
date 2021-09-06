@@ -41,12 +41,18 @@
 
     // make ctrl+up/down do page up/down
     // (normally it scrolls the page w/out moving cursor)
-    { "keys": ["ctrl+up"], "command": "move", "args": {"by": "pages", "forward": false} },
-    { "keys": ["ctrl+down"], "command": "move", "args": {"by": "pages", "forward": true} },
+    // { "keys": ["ctrl+up"], "command": "move", "args": {"by": "pages", "forward": false} },
+    // { "keys": ["ctrl+down"], "command": "move", "args": {"by": "pages", "forward": true} },
 
     // Swap Behavior of switching tabs with CTRL+Tab
     { "keys": ["ctrl+tab"], "command": "next_view" },
     { "keys": ["ctrl+shift+tab"], "command": "prev_view" },
+
+    // Move through tabs with wasd
+    { "keys": ["alt+d"], "command": "next_view" },
+    { "keys": ["alt+a"], "command": "prev_view" },
+    { "keys": ["alt+w"], "command": "focus_neighboring_group", "args": {"forward": false} },
+    { "keys": ["alt+s"], "command": "focus_neighboring_group", "args": {"forward": true} },
 
     { "keys": ["ctrl+shift+d"], "command": "select_all_exact_matches" },
 
