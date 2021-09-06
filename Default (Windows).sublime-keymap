@@ -6,7 +6,8 @@
     // expand scope by tabs
     { "keys": ["ctrl+shift+."], "command": "expand_selection", "args": {"to": "indentation"} },
     // go to next modification (opposite of ctrl+,)
-    { "keys": ["ctrl+shift+,"], "command": "next_modification" },
+    { "keys": ["ctrl+,"], "command": "next_modification" },
+    { "keys": ["ctrl+shift+,"], "command": "prev_modification" },
     // make a new snippet
     { "keys": ["ctrl+alt+n"], "command": "new_snippet" },
 
@@ -52,13 +53,14 @@
     // Move cursor by paragraph
     { "keys": ["ctrl+alt+["], "command": "move", "args": {"by": "stops", "empty_line": true, "forward": false} },
     { "keys": ["ctrl+alt+]"], "command": "move", "args": {"by": "stops", "empty_line": true, "forward": true} },
+    { "keys": ["ctrl+alt+shift+["], "command": "move", "args": {"by": "stops", "empty_line": true, "extends": true, "forward": false} },
+    { "keys": ["ctrl+shift+alt+]"], "command": "move", "args": {"by": "stops", "empty_line": true, "extends": true, "forward": true} },
 
-
-
-    // Select by paragraph
-        { "keys": ["ctrl+alt+shift+]"], "command": "expand_selection_by_paragraph_down" },
-        { "keys": ["ctrl+alt+shift+["], "command": "expand_selection_by_paragraph_up" },
-
+    // Move cursor to end of line
+    { "keys": ["alt+right+4"], "command": "move_to", "args": {"to": "hardeol", "extend": false} },
+    { "keys": ["alt+right+6"], "command": "move_to", "args": {"to": "hardbol", "extend": false} },
+    { "keys": ["alt+shift+right+4"], "command": "move_to", "args": {"to": "hardeol", "extend": true} },
+    { "keys": ["alt+shift+right+6"], "command": "move_to", "args": {"to": "hardbol", "extend": true} },
 
     // { "keys": ["ctrl+1"], "command": "focus_tab", "args": { "pos": 0 } },
     // { "keys": ["ctrl+2"], "command": "focus_tab", "args": { "pos": 1 } },
