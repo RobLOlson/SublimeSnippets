@@ -62,6 +62,10 @@
     { "keys": ["ctrl+shift+up"], "command": "move", "args": {"by": "stops", "empty_line": true, "extend": true, "forward": false} },
     { "keys": ["ctrl+shift+down"], "command": "move", "args": {"by": "stops", "empty_line": true, "extend": true, "forward": true} },
 
+    // Move entire lines around
+    { "keys": ["ctrl+k"], "command": "swap_line_up" },
+    { "keys": ["ctrl+j"], "command": "swap_line_down" },
+
     // Move cursor to end of line
     { "keys": ["alt+right+4"], "command": "move_to", "args": {"to": "hardeol", "extend": false} },
     { "keys": ["alt+right+6"], "command": "move_to", "args": {"to": "hardbol", "extend": false} },
