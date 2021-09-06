@@ -53,8 +53,14 @@
     // Move cursor by paragraph
     { "keys": ["ctrl+alt+["], "command": "move", "args": {"by": "stops", "empty_line": true, "forward": false} },
     { "keys": ["ctrl+alt+]"], "command": "move", "args": {"by": "stops", "empty_line": true, "forward": true} },
-    { "keys": ["ctrl+alt+shift+["], "command": "move", "args": {"by": "stops", "empty_line": true, "extends": true, "forward": false} },
-    { "keys": ["ctrl+shift+alt+]"], "command": "move", "args": {"by": "stops", "empty_line": true, "extends": true, "forward": true} },
+    { "keys": ["ctrl+alt+shift+["], "command": "move", "args": {"by": "stops", "empty_line": true, "extend": true, "forward": false} },
+    { "keys": ["ctrl+shift+alt+]"], "command": "move", "args": {"by": "stops", "empty_line": true, "extend": true, "forward": true} },
+
+    // Move cursor by paragraph
+    { "keys": ["ctrl+up"], "command": "move", "args": {"by": "stops", "empty_line": true, "forward": false} },
+    { "keys": ["ctrl+down"], "command": "move", "args": {"by": "stops", "empty_line": true, "forward": true} },
+    { "keys": ["ctrl+shift+up"], "command": "move", "args": {"by": "stops", "empty_line": true, "extend": true, "forward": false} },
+    { "keys": ["ctrl+shift+down"], "command": "move", "args": {"by": "stops", "empty_line": true, "extend": true, "forward": true} },
 
     // Move cursor to end of line
     { "keys": ["alt+right+4"], "command": "move_to", "args": {"to": "hardeol", "extend": false} },
