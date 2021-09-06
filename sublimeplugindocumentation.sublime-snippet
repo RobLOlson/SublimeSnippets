@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[
+https://www.sublimetext.com/docs/api_reference.html
+https://docs.sublimetext.io/reference/commands.html]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+    <tabTrigger>sublimeplugindocumentation</tabTrigger>
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <!-- <scope>source.python</scope> -->
+</snippet>

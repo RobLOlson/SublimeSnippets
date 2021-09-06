@@ -49,7 +49,6 @@ class BetterExpandSelectionCommand(sublime_plugin.TextCommand):
             else:
                 target.pop()
 
-
 # Original Version
 #
 #     def split_scope(self, pos):
