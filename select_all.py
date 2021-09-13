@@ -20,8 +20,7 @@ class SelectExactMatchCommand(sublime_plugin.TextCommand):
         region = self.view.find(pattern, selections[-1].end())
         if not region:
             region = self.view.find(
-                pattern,
-                self.last_selection.end() if self.last_selection else 0
+                pattern, self.last_selection.end() if self.last_selection else 0
             )
             if region:
                 self.last_selection = region
