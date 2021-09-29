@@ -1,0 +1,40 @@
+{
+    "high_visibility_enabled_by_default": true,
+    "high_visibility_style": "stippled",
+    "high_visibility_color": "__default__",
+    "scope_brackets":
+    [
+        {
+            "name": "py_double_quote",
+            "open": "(?:u|b|f)?r?((?:\"\")?\")",
+            "close": "((?:\"\")?\")",
+            "style": "double_quote",
+            "scopes": ["string", "meta.string"],
+            "language_filter": "allowlist",
+            "language_list": [
+                "Python",
+                "PythonImproved",
+                "MagicPython"
+            ],
+            "sub_bracket_search": "true",
+            "plugin_library": "bh_modules.pyquotes",
+            "enabled": false
+        },
+        {
+            "name": "py_single_quote",
+            "open": "(?:u|b|f)?r?((?:'')?')",
+            "close": "((?:'')?')",
+            "style": "single_quote",
+            "scopes": ["string", "meta.string"],
+            "language_filter": "allowlist",
+            "language_list": [
+                "Python",
+                "PythonImproved",
+                "MagicPython"
+            ],
+            "sub_bracket_search": "true",
+            "plugin_library": "bh_modules.pyquotes",
+            "enabled": false
+        },
+    ]
+}
