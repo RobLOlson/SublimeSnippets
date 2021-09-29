@@ -4,6 +4,7 @@ import sublime
 import sublime_plugin
 
 
+
 class BetterExpandSelectionCommand(sublime_plugin.TextCommand):
     def split_scope(self, pos):
         return re.findall(r'(?:^|\s+|\.)[^\s.]+', self.view.scope_name(pos))
@@ -30,7 +31,13 @@ class BetterExpandSelectionCommand(sublime_plugin.TextCommand):
 
         if new_lines_q:
             selection.add(sublime.Region(selection[0].b, selection[0].a))
-            self.view.run_command("expand_selection", {"to": "indentation"})
+
+            # If selection is not bounded by brackets
+            if "{" not in self.view.substr(self.view.selection[0].a-1) and \
+               "(" not in self.view.substr(self.view.selection[0].a-1) and \
+               "[" not in self.view.substr(self.view.selection[0].a-1):
+                self.view.run_command("expand_selection", {"to": "indentation"})
+            self.view.run_command("expand_selection", {"to": "brackets"})
             selection.add(sublime.Region(selection[0].b, selection[0].a))
 
             if abs(a_i - b_i) == abs(selection[0].a - selection[0].b):
