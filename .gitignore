@@ -1,6 +1,8 @@
+Package Control.sublime-settings
 *
 !*.sublime-snippet
 !*.sublime-settings
 !.gitignore
 !Default (Windows).sublime-keymap
 !*.py
+Package Control.sublime-settings
