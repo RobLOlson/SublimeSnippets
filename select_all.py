@@ -30,6 +30,7 @@ class SelectExactMatchCommand(sublime_plugin.TextCommand):
             selections.add(region)
             self.view.show(region)
 
+
 class SelectAllExactMatchesCommand(sublime_plugin.TextCommand):
     def run(self, edit):
         selections = self.view.sel()
@@ -39,5 +40,5 @@ class SelectAllExactMatchesCommand(sublime_plugin.TextCommand):
         pattern = "\\b%s\\b" % (word)
         selections.add_all(self.view.find_all(pattern))
 
-    def description():
+    def description(self):
         return "Select All Exact Matches"

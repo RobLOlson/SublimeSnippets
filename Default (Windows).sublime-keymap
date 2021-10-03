@@ -54,7 +54,8 @@
     { "keys": ["alt+w"], "command": "focus_neighboring_group", "args": {"forward": false} },
     { "keys": ["alt+s"], "command": "focus_neighboring_group", "args": {"forward": true} },
 
-    { "keys": ["ctrl+shift+d"], "command": "select_all_exact_matches" },
+    // { "keys": ["ctrl+shift+d"], "command": "select_all_exact_matches" },
+    { "keys": ["ctrl+shift+e"], "command": "select_all_exact_matches" },
 
     // Move cursor by paragraph
     { "keys": ["ctrl+alt+["], "command": "move", "args": {"by": "stops", "empty_line": true, "forward": false} },
