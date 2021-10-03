@@ -4,11 +4,11 @@
     "anaconda_linting": false,
 
     "enable_signatures_tooltip": true,
-    "disable_anaconda_completion": true,
-    "suppress_word_completions": true,
-    "suppress_explicit_completions": true,
+    "disable_anaconda_completion": false,
+    "suppress_word_completions": false,
+    "suppress_explicit_completions": false,
 
-      "disable_anaconda_completion": true,
-      "display_signatures": false,
+      "disable_anaconda_completion": false,
+      "display_signatures": true,
 
 }

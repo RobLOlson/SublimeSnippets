@@ -1,8 +1,8 @@
 import sublime_plugin
 
-
 class SelectExactMatchCommand(sublime_plugin.TextCommand):
     last_selection = None
+
 
     def run(self, edit):
         selections = self.view.sel()
@@ -29,7 +29,6 @@ class SelectExactMatchCommand(sublime_plugin.TextCommand):
         if region:
             selections.add(region)
             self.view.show(region)
-
 
 class SelectAllExactMatchesCommand(sublime_plugin.TextCommand):
     def run(self, edit):

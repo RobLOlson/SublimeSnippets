@@ -4,7 +4,6 @@ import sublime
 import sublime_plugin
 
 
-
 class BetterExpandSelectionCommand(sublime_plugin.TextCommand):
     def split_scope(self, pos):
         return re.findall(r'(?:^|\s+|\.)[^\s.]+', self.view.scope_name(pos))
