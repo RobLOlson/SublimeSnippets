@@ -1,6 +1,27 @@
 [
     // Robert Olson
-
+    {
+        "command": "anaconda_goto",
+        "keys": ["ctrl+shift+g"],
+        "context": [
+            {
+                "key": "selector",
+                "operator": "equal",
+                "operand": "source.python"
+            }
+        ]
+    },
+    {
+        "command": "anaconda_goto",
+        "keys": ["ctrl+alt+button1"],
+        "context": [
+            {
+                "key": "selector",
+                "operator": "equal",
+                "operand": "source.python"
+            }
+        ]
+    },
     // expand scope mathematica style
     { "keys": ["ctrl+."], "command": "better_expand_selection" },
     // expand scope by tabs

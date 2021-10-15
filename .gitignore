@@ -4,3 +4,4 @@
 !.gitignore
 !Default (Windows).sublime-keymap
 !*.py
+!*.sublime-mousemap
