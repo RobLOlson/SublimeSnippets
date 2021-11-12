@@ -1,0 +1,18 @@
+<snippet>
+    <content><![CDATA[
+# from dataclasses import dataclass, field
+@dataclass(frozen=False)
+class ${1:Structure}:
+    id: int = field(default=random())
+    alt_id: int = field(default_factory=random)
+    custom_id: int = field(init=False)
+    elements: list[Any] = field(default_factory=list) #list() generates empty list []
+
+    def __post_init__(self):
+            self.custom_id = f'#{self.id}'
+]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+    <tabTrigger>@dataclass</tabTrigger>
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <scope>source.python</scope>
+</snippet>
