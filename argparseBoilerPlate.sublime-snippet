@@ -8,7 +8,7 @@ argparse.ArgumentParser(
                         prog=sys.argv[0],
                         allow_abbrev=True,
                         add_help=True,
-                        usage="$(prog)s [-h] path",
+                        usage="\$(prog)s [-h] path",
                         description='List the content of a folder',
                         epilog='(C) Rob')
 

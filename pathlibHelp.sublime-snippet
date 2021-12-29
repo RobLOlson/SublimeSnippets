@@ -1,0 +1,42 @@
+<snippet>
+    <content><![CDATA[
+from pathlib import Path
+
+my_home = Path.home()
+my_folder = my_home / "folder_name"
+my_file = my_folder / "file_name.txt"
+
+my_file.parts()
+# ("~/", "folder_name", "file_name.txt")
+
+my_cwd = Path(".")
+my_cwd.resolve() # Path("C:\users\...")
+
+[folder for folder in my_file.parents]
+# [Path("~/my_folder"), Path("~/")]
+
+if my_file.exists():
+    my_file.write_text("Example")
+
+    fp = my_file.open()
+    fp.readlines()
+    # ["Example"]
+    fp.close()
+
+    my_file.read_text()
+    # "Example"
+
+else:
+    my_file.touch()
+
+all_folders = [elem for elem in my_home.iterdir() if elem.is_dir()]
+
+all_python = list(my_home.glob("**/*.py")) # recursive
+all_python = [elem for elem in my_home.iterdir() if elem.suffix == ".py"] # non-recursive
+
+]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+    <tabTrigger>pathlibHelp</tabTrigger>
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <scope>source.python</scope>
+</snippet>
