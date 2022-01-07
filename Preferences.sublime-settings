@@ -24,6 +24,7 @@
 		"sqlite"
 	],
 	"neovintageous_build_version": 11100,
+	"relative_line_numbers": false,
 	"rulers":
 	[
 		72,
