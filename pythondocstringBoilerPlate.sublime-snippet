@@ -1,0 +1,22 @@
+<snippet>
+    <content><![CDATA[
+"""Does a thing.
+
+    Does a thing with some more details.  
+
+    Args:
+        argument: an argument to the function.  Details go here.
+
+    Returns:
+        A description of the return value.  May include an example:
+
+        {'input': argument}
+
+    Raises:
+        ExampleError: An error raised when something goes wrong.
+"""]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+    <tabTrigger>functionDocstring</tabTrigger>
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <scope>source.python</scope>
+</snippet>
