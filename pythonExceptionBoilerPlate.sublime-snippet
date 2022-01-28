@@ -1,0 +1,13 @@
+<snippet>
+    <content><![CDATA[
+# common standard exceptions
+# StopIteration, OverflowError, ZeroDivisionError, IndexError, KeyError,
+# NameError, IOError, TypeError, ValueError, 
+except OSError as error:
+    logging.warning(f'Could not complete operation. (object: {object}) (reason: {error})')
+]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+    <tabTrigger>exceptBoilerPlate</tabTrigger>
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <scope>source.python</scope>
+</snippet>
