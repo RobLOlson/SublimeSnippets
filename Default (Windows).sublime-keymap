@@ -1,7 +1,7 @@
 [
     // Robert Olson
     {
-        "command": "anaconda_goto",
+        "command": "lsp_symbol_definition",
         "keys": ["ctrl+shift+g"],
         "context": [
             {
@@ -11,21 +11,96 @@
             }
         ]
     },
+
+    // BEGIN LSP COMMANDS
     {
-        "command": "anaconda_goto",
-        "keys": ["ctrl+alt+button1"],
+        "keys": ["f2"],
+        "command": "show_overlay",
+        "args": {
+            "overlay": "command_palette",
+            "text": "LSP: ",
+        }
+    },
+    {
+        "keys": ["f1"],
+        "command": "lsp_hover",
+    },
+
+    {
+        "command": "lsp_document_symbols",
+        "keys": [
+            "ctrl+r"
+        ],
         "context": [
             {
-                "key": "selector",
+                "key": "lsp.session_with_capability",
                 "operator": "equal",
-                "operand": "source.python"
+                "operand": "workspaceSymbolProvider"
             }
         ]
     },
+
+    {
+        "command": "lsp_symbol_rename",
+        "keys": [
+            "ctrl+shift+d"
+        ],
+        "context": [
+            {
+                "key": "lsp.session_with_capability",
+                "operator": "equal",
+                "operand": "renameProvider"
+            }
+        ]
+    },
+
+    // {
+    //    "command": "better_expand_selection",
+    //    "keys": [
+    //        "ctrl+."
+    //    ],
+    // },
+    // {
+    //    "command": "lsp_expand_selection",
+    //    "keys": [
+    //        "ctrl+."
+    //    ],
+    // },
+
+    // END LSP COMMANDS
+
+    // Move Cursor to End of Line
+    { "keys": ["ctrl+e", "ctrl+shift+e"], "command": "move_to", "args": {"to": "bol", "extend": false} },
+    { "keys": ["ctrl+e", "ctrl+a"], "command": "move_to", "args": {"to": "bol", "extend": false} },
+    { "keys": ["ctrl+e", "ctrl+h"], "command": "move_to", "args": {"to": "bol", "extend": false} },
+
+    // Move Cursor to Start of Line
+    { "keys": ["ctrl+e","ctrl+e"], "command": "move_to", "args": {"to": "eol", "extend": false} },
+    { "keys": ["ctrl+e","ctrl+d"], "command": "move_to", "args": {"to": "eol", "extend": false} },
+    { "keys": ["ctrl+e","ctrl+l"], "command": "move_to", "args": {"to": "eol", "extend": false} },
+
     // expand scope mathematica style
-    { "keys": ["ctrl+."], "command": "better_expand_selection" },
     // expand scope by tabs
-    { "keys": ["ctrl+shift+."], "command": "expand_selection", "args": {"to": "indentation"} },
+    { "keys": ["ctrl+shift+."], "command": "narrow_selection"},
+    // Expand Selection (a replacement for ST's "Expand Selection")
+    {
+        "command": "lsp_expand_selection",
+        "keys": [
+            "ctrl+."
+        ],
+        "context": [
+            {
+                "key": "lsp.session_with_capability",
+                "operator": "equal",
+                "operand": "selectionRangeProvider"
+            }
+        ]
+    },
+
+    // !! Had to rename custom command'better_expand_selection'
+    // !! to 'next_modification' so it would play nice with LSP
+    // { "keys": ["ctrl+."], "command": "next_modification" },
+
     // go to next modification (opposite of ctrl+,)
     { "keys": ["ctrl+,"], "command": "next_modification" },
     { "keys": ["ctrl+shift+,"], "command": "prev_modification" },

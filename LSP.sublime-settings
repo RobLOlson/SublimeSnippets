@@ -1,0 +1,9 @@
+// Settings in here override those in "LSP/LSP.sublime-settings"
+{
+    "show_view_status": false,
+    "show_diagnostics_panel_on_save": 0,
+    "show_references_in_quick_panel": true,
+    "show_symbol_action_links": false,
+    "show_code_actions": "annotation",
+    "show_code_lens": "phantom",
+}
