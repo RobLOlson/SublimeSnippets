@@ -14,6 +14,9 @@
 
     Raises:
         ExampleError: An error raised when something goes wrong.
+    Examples:
+        >>> function(foo)
+        <object(bar)>
 """]]></content>
     <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
     <tabTrigger>functionDocstring</tabTrigger>

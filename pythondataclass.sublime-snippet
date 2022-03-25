@@ -1,7 +1,7 @@
 <snippet>
     <content><![CDATA[
 # from dataclasses import dataclass, field
-@dataclass(frozen=False)
+@dataclass(frozen=False, slots=True)
 class ${1:Structure}:
     id: int = field(default=random())
     alt_id: int = field(default_factory=random)
