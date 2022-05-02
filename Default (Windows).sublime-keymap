@@ -69,15 +69,22 @@
 
     // END LSP COMMANDS
 
-    // Move Cursor to End of Line
+    // Move Cursor to Start of Line
     { "keys": ["ctrl+e", "ctrl+shift+e"], "command": "move_to", "args": {"to": "bol", "extend": false} },
     { "keys": ["ctrl+e", "ctrl+a"], "command": "move_to", "args": {"to": "bol", "extend": false} },
     { "keys": ["ctrl+e", "ctrl+h"], "command": "move_to", "args": {"to": "bol", "extend": false} },
 
-    // Move Cursor to Start of Line
+    // Select All Left
+    { "keys": ["shift+ctrl+h"], "command": "move_to", "args": {"to": "bol", "extend": true} },
+
+
+    // Move Cursor to End of Line
     { "keys": ["ctrl+e","ctrl+e"], "command": "move_to", "args": {"to": "eol", "extend": false} },
     { "keys": ["ctrl+e","ctrl+d"], "command": "move_to", "args": {"to": "eol", "extend": false} },
     { "keys": ["ctrl+e","ctrl+l"], "command": "move_to", "args": {"to": "eol", "extend": false} },
+
+    // Select All Right
+    { "keys": ["shift+ctrl+l"], "command": "move_to", "args": {"to": "eol", "extend": true} },
 
     // expand scope mathematica style
     // expand scope by tabs

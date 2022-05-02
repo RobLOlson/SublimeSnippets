@@ -15,6 +15,7 @@
 		"Fold Python Docstrings",
 		"Git",
 		"GitGutter",
+		"isort",
 		"JavaScript Enhancements",
 		"LSP",
 		"LSP-json",
