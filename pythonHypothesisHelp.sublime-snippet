@@ -1,0 +1,39 @@
+<snippet>
+    <content><![CDATA[
+import hypothesis, hypothesis-auto
+from hypothesis import given, strategies
+
+# EXAMPLES
+
+# automatically infer (standard) datatypes from annotations
+@given(...)
+def test(a: int, b: str):
+    pass
+
+# arguments are commutative
+@hypothesis.given(strategies.integers(-10, 10), strategies.integers())
+def test_ints_are_commutative(x, y):
+    assert x + y == y + x
+
+# Assert: List[int] = reversed(reversed(List[int]))
+@given(xs = strategies.lists(strategies.integers()))
+def test_reversing_twice_gives_same_list(xs):
+    ys = list(xs)
+    ys.reverse()
+    ys.reverse()
+    assert xs == ys
+
+# feed test only even integers
+@given(st.integers().filter(lambda x: x % 2 == 0))
+def test_even_integers(i):
+    assert i % 2 == 0
+
+# test functions manually with strategy.example()
+argument = tuples(integers(), integers()).example()
+my_function(argument)
+]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+    <tabTrigger>hypothesisHelp</tabTrigger>
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <scope>source.python</scope>
+</snippet>

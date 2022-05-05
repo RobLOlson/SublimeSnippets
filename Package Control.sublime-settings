@@ -2,6 +2,7 @@
 	"bootstrapped": true,
 	"in_process_packages":
 	[
+		"LSP-pyright",
 	],
 	"installed_packages":
 	[
@@ -22,6 +23,7 @@
 		"LSP-PowerShellEditorServices",
 		"LSP-pyright",
 		"MarkdownPreview",
+		"MypyReveal",
 		"NeoVintageous",
 		"Package Control",
 		"PackageResourceViewer",
@@ -30,6 +32,7 @@
 		"requirementstxt",
 		"SideBarEnhancements",
 		"SublimeLinter",
+		"SublimeLinter-contrib-mypy",
 		"SublimeLinter-contrib-yamllint",
 		"SublimeLinter-csslint",
 		"SublimeLinter-jshint",

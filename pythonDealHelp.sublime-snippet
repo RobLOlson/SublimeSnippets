@@ -1,0 +1,123 @@
+<snippet>
+    <content><![CDATA[
+# https://deal.readthedocs.io/details/examples.html
+
+# automatically decorate *.py files
+# > py -m deal [decorate/test/prove] project/
+
+import deal
+
+# EXAMPLE CONTRACTS
+# VVVVVVVVVVVVVVVVV
+
+# route is fed a valid role string
+@deal.pre(lambda role: role in ('user', 'admin'), exception=LookupError)
+
+# function never raises an exception
+@deal.safe()
+
+# function sometimes raises an exception
+@deal.raises(PermissionError)
+
+# the passed list cannot be empty
+@deal.pre(lambda items: bool(items))
+
+# result is an element within the passed list
+@deal.ensure(lambda items, result: result in items)
+@deal.ensure(lambda _: _.result in _.items)
+
+# all passed arguments > 0
+@deal.pre(lambda *args: all(arg > 0 for arg in args), exception=ValueError)
+def sum_positive(*args):
+    return sum(args)
+
+# declare that instance properties are >= 0
+@deal.inv(lambda post: post.likes >= 0)
+class Post:
+    likes = 0
+
+# disable all contracts
+deal.disable(permanent=False) # set to True for CPU optimization
+
+# enable all contracts
+deal.enable()
+
+# EXAMPLE function "count": implement equivalent of List.count()
+# VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV
+
+# Count elements in a list
+
+# !NOTICE!
+# !In short signature, `_` is a `dict` with access by attributes.     !
+# !Hence it has all dict attributes. So, if argument we need conflicts!
+# !with a dict attribute, use getitem instead of getattr.             !
+# !In the example below, we use `_['items']` instead of `_.items`.    !
+
+# result is not negative
+@deal.post(lambda result: result >= 0)
+# if count is not zero, `item` appears in `items` at least once.
+@deal.ensure(lambda _: _.result == 0 or _['item'] in _['items'])
+# if count is zero, `item` is not in `items`
+@deal.ensure(lambda _: _.result != 0 or _['item'] not in _['items'])
+@deal.has()
+def count(items: List[str], item: str) -> int:
+    """How many times `item` appears in `items`
+    """
+    return items.count(item)
+
+
+# ^^^^^^^^^^^^^^
+# END OF EXAMPLE
+
+# TESTING EXAMPLE
+# VVVVVVVVVVVVVVV
+
+# div is a function: div(10, 2) -> 5
+
+@deal.cases(div, count=50)
+def test_div(case: deal.TestCase) -> None:
+    result = case()
+   if result is not NoReturn:
+       # if no exceptions was raised, print the result
+       print(f"index of {case.kwargs['item']} in {case.kwargs['items']} is {result}")
+
+# Execute tests with CLI:
+# > py -m deal test project/*.py
+
+# ^^^^^^^^^^^^^^
+# END OF TESTING
+
+# CHAINING EXAMPLE
+# VVVVVVVVVVVVVVVV
+
+contract_for_index_of = deal.chain(
+    # result is an index of items
+    deal.post(lambda result: result >= 0),
+    deal.ensure(lambda items, item, result: result < len(items)),
+    # element at this position matches item
+    deal.ensure(
+        lambda items, item, result: items[result] == item,
+        message='invalid match',
+    ),
+    # element at this position is the first match
+    deal.ensure(
+        lambda items, item, result: not any(el == item for el in items[:result]),
+        message='not the first match',
+    ),
+    # LookupError will be raised if no elements found
+    deal.raises(LookupError),
+    deal.reason(LookupError, lambda items, item: item not in items),
+    # no side-effects
+    deal.has(),
+)
+
+# ^^^^^^^^^^^^^^^
+# END OF CHAINING
+
+
+]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+    <tabTrigger>dealHelp</tabTrigger>
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <scope>source.python</scope>
+</snippet>
