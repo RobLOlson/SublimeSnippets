@@ -3,48 +3,39 @@
 import argparse
 
 # Create the parser
-my_parser = \
-argparse.ArgumentParser(
-                        prog=sys.argv[0],
-                        allow_abbrev=True,
-                        add_help=True,
-                        usage="\$(prog)s [-h] path",
-                        description='List the content of a folder',
-                        epilog='(C) Rob')
+my_parser = argparse.ArgumentParser(
+    prog=sys.argv[0],
+    allow_abbrev=True,
+    add_help=True,
+    usage="\$(prog)s [-h] path",
+    description="List the content of a folder",
+    epilog="(C) Rob",
+)
 
 # Add the arguments
-my_parser.add_argument('Path',
-                       metavar='path',
-                       nargs='?',
-                       default='.',
-                       action="store",
-                       type=str,
-                       help='the path to list')
+my_parser.add_argument(
+    "Path",
+    metavar="path",
+    nargs="?",
+    default=".",
+    action="store",
+    type=str,
+    help="the path to list",
+)
 
-my_parser.add_argument('-l',
-                       '--long',
-                       action='store_true',
-                       help='enable long')
+my_parser.add_argument("-l", "--long", action="store_true", help="enable long")
 
 my_group = my_parser.add_mutually_exclusive_group(required=True)
 
-my_group.add_argument(
-                      '-v',
-                      '--verbose',
-                      action='store',
-                      type=int,
-                      metavar='LEVEL')
+my_group.add_argument("-v", "--verbose", action="store", type=int, metavar="LEVEL")
 
-my_group.add_argument('-s',
-                      '--silent',
-                      action='store',
-                      choices=[1,2,3])
+my_group.add_argument("-s", "--silent", action="store", choices=[1, 2, 3])
 
 # Execute the parse_args() method
 args = my_parser.parse_args()
 
 if not args.Path:
-    print('The path specified does not exist')
+    print("The path specified does not exist")
 
 else:
     print(vars(args))
