@@ -181,6 +181,13 @@
     { "keys": ["alt+right+6"], "command": "move_to", "args": {"to": "hardbol", "extend": false} },
     { "keys": ["alt+shift+right+4"], "command": "move_to", "args": {"to": "hardeol", "extend": true} },
     { "keys": ["alt+shift+right+6"], "command": "move_to", "args": {"to": "hardbol", "extend": true} },
+    { "keys": ["alt+ctrl+g"], "command": "move_to", "args": {"to": "hardbol", "extend": false} },
+    { "keys": ["alt+ctrl+;"], "command": "move_to", "args": {"to": "hardeol", "extend": false} },
+    { "keys": ["alt+ctrl+shift+g"], "command": "move_to", "args": {"to": "hardbol", "extend": true} },
+    { "keys": ["alt+ctrl+shift+;"], "command": "move_to", "args": {"to": "hardeol", "extend": true} },
+    { "keys": ["alt+g"], "command": "move", "args": {"by": "words", "empty_line": true, "forward": false} },
+    { "keys": ["alt+;"], "command": "move", "args": {"by": "words", "empty_line": true, "forward": true} },
+
 
     // { "keys": ["ctrl+1"], "command": "focus_tab", "args": { "pos": 0 } },
     // { "keys": ["ctrl+2"], "command": "focus_tab", "args": { "pos": 1 } },
