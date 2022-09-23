@@ -1,5 +1,8 @@
 <snippet>
     <content><![CDATA[
+# ARGPARSE BOILERPLATE
+# VVVVVVVVVVVVVVVVVVVV
+
 import argparse
 
 # Create the parser
@@ -23,6 +26,13 @@ my_parser.add_argument(
     help="the path to list",
 )
 
+# Add SUBPARSER
+subparsers = my_parser.add_subparsers(help='sub-command help')
+
+# create the SUBPARSER for the "a" command
+parser_a = subparsers.add_parser('a', help='a help')
+parser_a.add_argument('bar', type=int, help='bar help')
+
 my_parser.add_argument("-l", "--long", action="store_true", help="enable long")
 
 my_group = my_parser.add_mutually_exclusive_group(required=True)
@@ -39,6 +49,9 @@ if not args.Path:
 
 else:
     print(vars(args))
+
+# ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+# END OF ARGPARSE BOILERPLATE
 ]]></content>
     <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
     <tabTrigger>argparseBoilerPlate</tabTrigger>

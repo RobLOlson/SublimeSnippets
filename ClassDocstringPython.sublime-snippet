@@ -1,0 +1,21 @@
+<snippet>
+    <content><![CDATA[
+"""Summary of class here.
+
+Longer class information....
+Longer class information....
+
+ATTRIBUTES:
+    likes_spam: A boolean indicating if we like SPAM or not.
+    eggs: An integer count of the eggs we have laid.
+
+EXAMPLES:
+
+>>> myinstance = MyClass()
+<myinstance()>
+"""]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+    <tabTrigger>classDocstring</tabTrigger>
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <scope>source.python</scope>
+</snippet>

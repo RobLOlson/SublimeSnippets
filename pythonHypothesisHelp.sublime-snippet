@@ -1,14 +1,29 @@
 <snippet>
     <content><![CDATA[
-import hypothesis, hypothesis-auto
-from hypothesis import given, strategies
+import hypothesis
+from hypothesis import given, strategies, example
 
-# EXAMPLES
+# EXPLORATION
+
+>>> strategies.integers(min_value=0, max_value=10).example()
+1
+
+>>> strategies.tuples(strategies.integers(), strategies.integers()).example()
+(-2356, 1243)
+
+# test functions manually with strategy.example()
+argument = tuples(integers(), integers()).example()
+my_function(argument)
+
+# --------------
+# STOCK EXAMPLES
+# vvvvvvvvVVVVVV
 
 # automatically infer (standard) datatypes from annotations
-@given(...)
+@hypothesis.given(...)
+@hypothesis.example(1, "1")
 def test(a: int, b: str):
-    pass
+    assert str(a) == b
 
 # arguments are commutative
 @hypothesis.given(strategies.integers(-10, 10), strategies.integers())
@@ -24,13 +39,115 @@ def test_reversing_twice_gives_same_list(xs):
     assert xs == ys
 
 # feed test only even integers
-@given(st.integers().filter(lambda x: x % 2 == 0))
+@given(strategies.integers().filter(lambda x: x % 2 == 0))
 def test_even_integers(i):
     assert i % 2 == 0
 
-# test functions manually with strategy.example()
-argument = tuples(integers(), integers()).example()
-my_function(argument)
+# use "@given(teams())" instead of "@given(strategies.integers(1, 20))"
+@strategies.composite
+def teams(draw: Callable[[strategies.SearchStrategy[int]], int], min_value: int = 1, max_value: int = 20) -> list[Players]:
+    rand_val = draw(strategies.integers(min_vale, max_value))
+    return generate_random_team(rand_val) # -> list[Players]
+
+# ------------------
+# ASCII text example
+# VVVVVVVVVVVVVVVVVV
+
+@composite
+def ascii_text(draw):
+    text = draw(strategies.text(alphabet=strategies.characters(whitelist_categories="L", max_codepoint=123)))
+    return text
+
+@given(ascii_text())
+def test_text(text):
+    assert text==text.lower()
+
+# ------------------------------
+# Legal Windows Filename Example
+# VVVVVVVVVVVVVVVVVVVVVVVVVVVVVV
+
+@composite
+def windows_filename(draw):
+    return draw(strategies.from_regex(r"\A[^/\\:*\"<>|?]+\.[^/\\:*\"<>|?]+$"))
+
+@given(windows_filename())
+def legal_windows_filename_test(filename):
+    path = pathlib.Path(filename.strip())
+    if not path.exists():
+        path.touch()
+
+# ------------------------------------
+# COMMAND LINE INTERFACE / GHOSTWRITER
+# VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV
+
+# Generate test skeleton
+# > hypothesis write [OPTIONS] FUNCTION_NAME
+# > hypothesis write --help
+
+from hypothesis.extra import ghostwriter
+
+open("test_function.py","w").write(ghostwriter.magic(MY_FUNCTION))
+
+# --------------------------------
+# STATE MACHINE / STATEFUL TESTING
+# vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
+
+from hypothesis import note, settings
+from hypothesis.stateful import RuleBasedStateMachine, rule, invariant
+
+
+class DieHardProblem(RuleBasedStateMachine):
+    small = 0
+    big = 0
+
+    @rule()
+    def fill_small(self):
+        self.small = 3
+
+    @rule()
+    def fill_big(self):
+        self.big = 5
+
+    @rule()
+    def empty_small(self):
+        self.small = 0
+
+    @rule()
+    def empty_big(self):
+        self.big = 0
+
+    @rule()
+    def pour_small_into_big(self):
+        old_big = self.big
+        self.big = min(5, self.big + self.small)
+        self.small = self.small - (self.big - old_big)
+
+    @rule()
+    def pour_big_into_small(self):
+        old_small = self.small
+        self.small = min(3, self.small + self.big)
+        self.big = self.big - (self.small - old_small)`
+
+    @invariant()
+    def physics_of_jugs(self):
+        assert 0 <= self.small <= 3
+        assert 0 <= self.big <= 5
+
+    @invariant()
+    def die_hard_problem_not_solved(self):
+        note("> small: {s} big: {b}".format(s=self.small, b=self.big))
+        assert self.big != 4
+
+
+# The default of 200 is sometimes not enough for Hypothesis to find
+# a falsifying example.
+
+DieHardTest = DieHardProblem.TestCase
+DieHardTest.runTest(DieHardTest)
+
+# ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+# STATE MACHINE / STATEFUL TESTING
+
 ]]></content>
     <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
     <tabTrigger>hypothesisHelp</tabTrigger>

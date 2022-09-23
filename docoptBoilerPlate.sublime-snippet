@@ -1,0 +1,31 @@
+<snippet>
+    <content><![CDATA[
+# DOCOPT BOILERPLATE
+# VVVVVVVVVVVVVVVVVV
+
+from docopt import docopt
+
+_DOC = """Shoot a quick email.
+
+Usage:
+  email.py add <name> <email>
+  email.py contacts
+  email.py users [--default [<user>]]
+  email.py [--user <user>] <target> <content>...
+  email.py [-h | --help]
+
+Options:
+  -u <user>, --user <user>
+  -h --help
+"""
+
+_ARGS = docopt(_DOC, sys.argv[1:])
+
+# ^^^^^^^^^^^^^^^^^^^^^^^^^
+# END OF DOCOPT BOILERPLATE
+]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+    <tabTrigger>docoptBoilerPlate</tabTrigger>
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <scope>source.python</scope>
+</snippet>
