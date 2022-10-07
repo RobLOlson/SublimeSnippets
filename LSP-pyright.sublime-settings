@@ -1,12 +1,10 @@
 // Settings in here override those in "LSP-pyright/LSP-pyright.sublime-settings"
-
 {
-    "settings":{
-
+    "settings": {
         // "python.analysis.extraPaths": ["C:\\Users\\sterl\\AppData\\Local\\pypoetry\\Cache\\virtualenvs\\robolson-tTkljxzG-py3.10\\Lib\\site-packages"],
         // "python.analysis.extraPaths": ["C:\\Python310\\Lib","C:\\Python310\\Lib\\site-packages"],
         "python.analysis.autoImportCompletions": true,
         "python.pythonPath": "py",
-        // "python.venvPath": "C:\\Users\\sterl\\AppData\\Local\\pypoetry\\Cache\\virtualenvs\\",
+        "python.venvPath": "C:\\Users\\sterl\\AppData\\Local\\pypoetry\\Cache\\virtualenvs\\",
     }
 }

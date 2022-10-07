@@ -11,7 +11,7 @@
 	"bold_folder_labels": true,
 	"dictionary": "Packages/Language - English/en_US.dic",
 	"ensure_newline_at_eof_on_save": true,
-	"font_size": 10,
+	"font_size": 9,
 	"hardware_acceleration": "opengl",
 	"ignored_packages":
 	[

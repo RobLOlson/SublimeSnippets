@@ -1,0 +1,76 @@
+<snippet>
+    <content><![CDATA[
+from redengine import RedEngine
+
+app = RedEngine()
+
+@app.task('daily | weekly | monthly')
+def do_things():
+    ...
+
+@app.task('every 2 days 2 hours 20 seconds')
+def do_custom():
+    ...
+
+@app.task('daily between 10:00 and 22:00')
+def do_daily_between():
+    ...
+
+@app.task('weekly on Monday')
+def do_on_monday():
+    ...
+
+@app.task('monthy after 5th')
+def do_monthly_after_fifth():
+    ...
+
+@app.task('time of day between 10:00 and 18:00')
+def do_constantly_during_day():
+    ...
+
+@app.task('time of week between Saturday and Sunday')
+def do_constantly_during_weekend():
+    ...
+
+# Parameter: execution
+# VVVVVVVVVVVVVVVVVVVV
+
+@app.task("daily", execution="main") # DEFAULT
+def do_main():
+    ...
+
+@app.task("daily", execution="thread")
+def do_thread():
+    ...
+
+@app.task("daily", execution="process")
+def do_process():
+    ...
+
+# PIPELINING
+# VVVVVVVVVV
+
+from redengine.args import Return
+
+@app.task("daily after 07:00")
+def do_first():
+    ...
+    return 'Hello World'
+
+@app.task("after task 'do_first'")
+def do_second(arg=Return('do_first')):
+    # arg contains the value of the task do_first's return
+    ...
+    return 'Hello Python'
+
+if __name__ == "__main__":
+    app.run()
+
+
+
+]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+    <tabTrigger>redengineBoilerPlate</tabTrigger>
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <scope>source.python</scope>
+</snippet>

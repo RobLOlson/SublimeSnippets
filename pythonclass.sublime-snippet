@@ -4,6 +4,7 @@
 # Notes:
 #
 class ${1:ClassName}(${2:object}):
+    __slots__ = "arg", "arg2"
     ${3/.+/"""/}${3:docstring for $1}${3/.+/"""\n/}${3/.+/\t/}
     CLASS_CONSTANT = 0
 

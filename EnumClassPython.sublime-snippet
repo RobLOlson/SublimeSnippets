@@ -1,0 +1,17 @@
+<snippet>
+    <content><![CDATA[
+from enum import Enum
+
+class ${1:Enumerator}(Enum):
+    ONE = "one"
+    TWO = 2
+    THREE = True
+
+flag_1 = Enumerator.ONE
+flag_2 = Enumerator.TWO
+]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+    <tabTrigger>enum</tabTrigger>
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <scope>source.python</scope>
+</snippet>

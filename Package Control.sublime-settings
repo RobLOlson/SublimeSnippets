@@ -2,7 +2,6 @@
 	"bootstrapped": true,
 	"in_process_packages":
 	[
-		"LSP-pyright",
 	],
 	"installed_packages":
 	[
@@ -28,15 +27,17 @@
 		"Package Control",
 		"PackageResourceViewer",
 		"PowerShell",
+		"Pytest Snippets",
 		"python-black",
 		"requirementstxt",
 		"SideBarEnhancements",
 		"SublimeLinter",
-		"SublimeLinter-contrib-mypy",
+		"SublimeLinter-contrib-staticcheck",
 		"SublimeLinter-contrib-yamllint",
 		"SublimeLinter-csslint",
 		"SublimeLinter-jshint",
 		"SublimeLinter-json",
+		"SublimeLinter-mypy",
 		"SublimeLinter-pyyaml",
 		"SublimeREPL",
 		"tern_for_sublime",
