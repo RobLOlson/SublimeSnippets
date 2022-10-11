@@ -31,6 +31,7 @@
 		"python-black",
 		"requirementstxt",
 		"SideBarEnhancements",
+		"SmarterLineMoves",
 		"SublimeLinter",
 		"SublimeLinter-contrib-staticcheck",
 		"SublimeLinter-contrib-yamllint",
