@@ -2,7 +2,9 @@
     // Robert Olson
     {
         "command": "lsp_symbol_definition",
-        "keys": ["ctrl+shift+g"],
+        "keys": [
+            "ctrl+shift+g"
+        ],
         "context": [
             {
                 "key": "selector",
@@ -11,10 +13,11 @@
             }
         ]
     },
-
     // BEGIN LSP COMMANDS
     {
-        "keys": ["f2"],
+        "keys": [
+            "f2"
+        ],
         "command": "show_overlay",
         "args": {
             "overlay": "command_palette",
@@ -22,10 +25,11 @@
         }
     },
     {
-        "keys": ["f1"],
+        "keys": [
+            "f1"
+        ],
         "command": "lsp_hover",
     },
-
     {
         "command": "lsp_document_symbols",
         "keys": [
@@ -39,7 +43,6 @@
             }
         ]
     },
-
     {
         "command": "lsp_symbol_rename",
         "keys": [
@@ -53,42 +56,105 @@
             }
         ]
     },
-
-    // {
-    //    "command": "better_expand_selection",
-    //    "keys": [
-    //        "ctrl+."
-    //    ],
-    // },
-    // {
-    //    "command": "lsp_expand_selection",
-    //    "keys": [
-    //        "ctrl+."
-    //    ],
-    // },
-
     // END LSP COMMANDS
-
     // Move Cursor to Start of Line
-    { "keys": ["ctrl+e", "ctrl+shift+e"], "command": "move_to", "args": {"to": "bol", "extend": false} },
-    { "keys": ["ctrl+e", "ctrl+a"], "command": "move_to", "args": {"to": "bol", "extend": false} },
-    { "keys": ["ctrl+e", "ctrl+h"], "command": "move_to", "args": {"to": "bol", "extend": false} },
-
+    {
+        "keys": [
+            "ctrl+e",
+            "ctrl+shift+e"
+        ],
+        "command": "move_to",
+        "args": {
+            "to": "bol",
+            "extend": false
+        }
+    },
+    {
+        "keys": [
+            "ctrl+e",
+            "ctrl+a"
+        ],
+        "command": "move_to",
+        "args": {
+            "to": "bol",
+            "extend": false
+        }
+    },
+    {
+        "keys": [
+            "ctrl+e",
+            "ctrl+h"
+        ],
+        "command": "move_to",
+        "args": {
+            "to": "bol",
+            "extend": false
+        }
+    },
     // Select All Left
-    { "keys": ["shift+ctrl+h"], "command": "move_to", "args": {"to": "bol", "extend": true} },
-
-
+    {
+        "keys": [
+            "shift+ctrl+h"
+        ],
+        "command": "move_to",
+        "args": {
+            "to": "bol",
+            "extend": true
+        }
+    },
     // Move Cursor to End of Line
-    { "keys": ["ctrl+e","ctrl+e"], "command": "move_to", "args": {"to": "eol", "extend": false} },
-    { "keys": ["ctrl+e","ctrl+d"], "command": "move_to", "args": {"to": "eol", "extend": false} },
-    { "keys": ["ctrl+e","ctrl+l"], "command": "move_to", "args": {"to": "eol", "extend": false} },
-
+    {
+        "keys": [
+            "ctrl+e",
+            "ctrl+e"
+        ],
+        "command": "move_to",
+        "args": {
+            "to": "eol",
+            "extend": false
+        }
+    },
+    {
+        "keys": [
+            "ctrl+e",
+            "ctrl+d"
+        ],
+        "command": "move_to",
+        "args": {
+            "to": "eol",
+            "extend": false
+        }
+    },
+    {
+        "keys": [
+            "ctrl+e",
+            "ctrl+l"
+        ],
+        "command": "move_to",
+        "args": {
+            "to": "eol",
+            "extend": false
+        }
+    },
     // Select All Right
-    { "keys": ["shift+ctrl+l"], "command": "move_to", "args": {"to": "eol", "extend": true} },
-
+    {
+        "keys": [
+            "shift+ctrl+l"
+        ],
+        "command": "move_to",
+        "args": {
+            "to": "eol",
+            "extend": true
+        }
+    },
     // expand scope mathematica style
     // expand scope by tabs
-    { "keys": ["ctrl+shift+."], "command": "narrow_selection"},
+    {
+        "keys": [
+            "ctrl+shift+."
+        ],
+        "command": "narrow_selection"
+    },
     // Expand Selection (a replacement for ST's "Expand Selection")
     {
         "command": "lsp_expand_selection",
@@ -103,155 +169,357 @@
             }
         ]
     },
-
     // !! Had to rename custom command'better_expand_selection'
     // !! to 'next_modification' so it would play nice with LSP
     // { "keys": ["ctrl+."], "command": "next_modification" },
-
     // go to next modification (opposite of ctrl+,)
-    { "keys": ["ctrl+,"], "command": "next_modification" },
-    { "keys": ["ctrl+shift+,"], "command": "prev_modification" },
+    {
+        "keys": [
+            "ctrl+,"
+        ],
+        "command": "next_modification"
+    },
+    {
+        "keys": [
+            "ctrl+shift+,"
+        ],
+        "command": "prev_modification"
+    },
     // make a new snippet
-    { "keys": ["ctrl+alt+n"], "command": "new_snippet" },
-
-    {"keys": ["ctrl+alt+d"], "command": "clone_file"},
-
+    {
+        "keys": [
+            "ctrl+alt+n"
+        ],
+        "command": "new_snippet"
+    },
+    {
+        "keys": [
+            "ctrl+alt+d"
+        ],
+        "command": "clone_file"
+    },
     // snippet shortcut template
     // { "keys": ["ctrl+1"], "command": "insert_snippet", "args": {"name": "Packages/User/myFunction.sublime-snippet"} }
     {
-        "keys": ["j", "j"],
+        "keys": [
+            "j",
+            "j"
+        ],
         "command": "_enter_normal_mode",
-        "args": {"mode": "mode_insert"},
-        "context": [{"key": "vi_insert_mode_aware"}]
+        "args": {
+            "mode": "mode_insert"
+        },
+        "context": [
+            {
+                "key": "vi_insert_mode_aware"
+            }
+        ]
     },
     {
-        "keys": ["k", "k"],
+        "keys": [
+            "k",
+            "k"
+        ],
         "command": "_enter_normal_mode",
-        "args": {"mode": "mode_insert"},
-        "context": [{"key": "vi_insert_mode_aware"}]
+        "args": {
+            "mode": "mode_insert"
+        },
+        "context": [
+            {
+                "key": "vi_insert_mode_aware"
+            }
+        ]
     },
-    { "keys": ["ctrl+shift+a"], "command": "toggle_setting", "args": {"setting": "auto_complete"} },
-
     {
-        "keys": ["alt+shift+w"],
+        "keys": [
+            "ctrl+shift+a"
+        ],
+        "command": "toggle_setting",
+        "args": {
+            "setting": "auto_complete"
+        }
+    },
+    {
+        "keys": [
+            "alt+shift+w"
+        ],
         "command": "",
     },
-
     {
-        "keys": ["alt+c"],
+        "keys": [
+            "alt+c"
+        ],
         "command": "show_at_center",
     },
-
     // make ctrl+up/down do page up/down
     // (normally it scrolls the page w/out moving cursor)
     // { "keys": ["ctrl+up"], "command": "move", "args": {"by": "pages", "forward": false} },
     // { "keys": ["ctrl+down"], "command": "move", "args": {"by": "pages", "forward": true} },
-
     // Swap Behavior of switching tabs with CTRL+Tab
-    { "keys": ["ctrl+tab"], "command": "next_view" },
-    { "keys": ["ctrl+shift+tab"], "command": "prev_view" },
-
+    {
+        "keys": [
+            "ctrl+tab"
+        ],
+        "command": "next_view"
+    },
+    {
+        "keys": [
+            "ctrl+shift+tab"
+        ],
+        "command": "prev_view"
+    },
     // Move through tabs with wasd
-    { "keys": ["alt+d"], "command": "next_view" },
-    { "keys": ["alt+a"], "command": "prev_view" },
-    { "keys": ["alt+w"], "command": "focus_neighboring_group", "args": {"forward": false} },
-    { "keys": ["alt+s"], "command": "focus_neighboring_group", "args": {"forward": true} },
-
+    {
+        "keys": [
+            "alt+d"
+        ],
+        "command": "next_view"
+    },
+    {
+        "keys": [
+            "alt+a"
+        ],
+        "command": "prev_view"
+    },
+    {
+        "keys": [
+            "alt+w"
+        ],
+        "command": "focus_neighboring_group",
+        "args": {
+            "forward": false
+        }
+    },
+    {
+        "keys": [
+            "alt+s"
+        ],
+        "command": "focus_neighboring_group",
+        "args": {
+            "forward": true
+        }
+    },
     // { "keys": ["ctrl+shift+d"], "command": "select_all_exact_matches" },
-    { "keys": ["ctrl+shift+e"], "command": "select_all_exact_matches" },
-
+    {
+        "keys": [
+            "ctrl+shift+e"
+        ],
+        "command": "select_all_exact_matches"
+    },
     // Move cursor by paragraph
-    { "keys": ["ctrl+alt+["], "command": "move", "args": {"by": "stops", "empty_line": true, "forward": false} },
-    { "keys": ["ctrl+alt+]"], "command": "move", "args": {"by": "stops", "empty_line": true, "forward": true} },
-    { "keys": ["ctrl+alt+shift+["], "command": "move", "args": {"by": "stops", "empty_line": true, "extend": true, "forward": false} },
-    { "keys": ["ctrl+shift+alt+]"], "command": "move", "args": {"by": "stops", "empty_line": true, "extend": true, "forward": true} },
-
+    {
+        "keys": [
+            "ctrl+alt+["
+        ],
+        "command": "move",
+        "args": {
+            "by": "stops",
+            "empty_line": true,
+            "forward": false
+        }
+    },
+    {
+        "keys": [
+            "ctrl+alt+]"
+        ],
+        "command": "move",
+        "args": {
+            "by": "stops",
+            "empty_line": true,
+            "forward": true
+        }
+    },
+    {
+        "keys": [
+            "ctrl+alt+shift+["
+        ],
+        "command": "move",
+        "args": {
+            "by": "stops",
+            "empty_line": true,
+            "extend": true,
+            "forward": false
+        }
+    },
+    {
+        "keys": [
+            "ctrl+shift+alt+]"
+        ],
+        "command": "move",
+        "args": {
+            "by": "stops",
+            "empty_line": true,
+            "extend": true,
+            "forward": true
+        }
+    },
     // Move cursor by paragraph
-    { "keys": ["ctrl+up"], "command": "move", "args": {"by": "stops", "empty_line": true, "forward": false} },
-    { "keys": ["ctrl+down"], "command": "move", "args": {"by": "stops", "empty_line": true, "forward": true} },
-    { "keys": ["ctrl+shift+up"], "command": "move", "args": {"by": "stops", "empty_line": true, "extend": true, "forward": false} },
-    { "keys": ["ctrl+shift+down"], "command": "move", "args": {"by": "stops", "empty_line": true, "extend": true, "forward": true} },
-
+    {
+        "keys": [
+            "ctrl+up"
+        ],
+        "command": "move",
+        "args": {
+            "by": "stops",
+            "empty_line": true,
+            "forward": false
+        }
+    },
+    {
+        "keys": [
+            "ctrl+down"
+        ],
+        "command": "move",
+        "args": {
+            "by": "stops",
+            "empty_line": true,
+            "forward": true
+        }
+    },
+    {
+        "keys": [
+            "ctrl+shift+up"
+        ],
+        "command": "move",
+        "args": {
+            "by": "stops",
+            "empty_line": true,
+            "extend": true,
+            "forward": false
+        }
+    },
+    {
+        "keys": [
+            "ctrl+shift+down"
+        ],
+        "command": "move",
+        "args": {
+            "by": "stops",
+            "empty_line": true,
+            "extend": true,
+            "forward": true
+        }
+    },
     // Move entire lines around
-    { "keys": ["ctrl+k"], "command": "swap_line_up" },
-    { "keys": ["ctrl+j"], "command": "swap_line_down" },
-
+    {
+        "keys": [
+            "ctrl+k"
+        ],
+        "command": "swap_line_up"
+    },
+    {
+        "keys": [
+            "ctrl+j"
+        ],
+        "command": "swap_line_down"
+    },
     // Move cursor to end of line
-    { "keys": ["alt+right+4"], "command": "move_to", "args": {"to": "hardeol", "extend": false} },
-    { "keys": ["alt+right+6"], "command": "move_to", "args": {"to": "hardbol", "extend": false} },
-    { "keys": ["alt+shift+right+4"], "command": "move_to", "args": {"to": "hardeol", "extend": true} },
-    { "keys": ["alt+shift+right+6"], "command": "move_to", "args": {"to": "hardbol", "extend": true} },
-    { "keys": ["alt+ctrl+g"], "command": "move_to", "args": {"to": "hardbol", "extend": false} },
-    { "keys": ["alt+ctrl+;"], "command": "move_to", "args": {"to": "hardeol", "extend": false} },
-    { "keys": ["alt+ctrl+shift+g"], "command": "move_to", "args": {"to": "hardbol", "extend": true} },
-    { "keys": ["alt+ctrl+shift+;"], "command": "move_to", "args": {"to": "hardeol", "extend": true} },
-    { "keys": ["alt+g"], "command": "move", "args": {"by": "words", "empty_line": true, "forward": false} },
-    { "keys": ["alt+;"], "command": "move", "args": {"by": "words", "empty_line": true, "forward": true} },
-
-
-    // { "keys": ["ctrl+1"], "command": "focus_tab", "args": { "pos": 0 } },
-    // { "keys": ["ctrl+2"], "command": "focus_tab", "args": { "pos": 1 } },
-    // { "keys": ["ctrl+3"], "command": "focus_tab", "args": { "pos": 2 } },
-    // { "keys": ["ctrl+4"], "command": "focus_tab", "args": { "pos": 3 } },
-    // { "keys": ["ctrl+5"], "command": "focus_tab", "args": { "pos": 4 } },
-    // { "keys": ["ctrl+6"], "command": "focus_tab", "args": { "pos": 5 } },
-    // { "keys": ["ctrl+7"], "command": "focus_tab", "args": { "pos": 6 } },
-    // { "keys": ["ctrl+8"], "command": "focus_tab", "args": { "pos": 7 } },
-    // { "keys": ["ctrl+9"], "command": "focus_tab", "args": { "pos": 8 } },
-
-
-    // vim style move to beginning/end of line
-    // { "keys": ["ctrl+alt+h"], "command": "move_to", "args": {"to": "bol", "extend": false} },
-
-
-    // { "keys": ["ctrl+alt+l"], "command": "move_to", "args": {"to": "eol", "extend": false} },
-
-
-    // // vim style cursor moving while holding alt
-    // { "keys": ["alt+h"], "command": "move", "args": {"by": "characters", "forward": false} },
-    // { "keys": ["alt+l"], "command": "move", "args": {"by": "characters", "forward": true} },
-    // { "keys": ["alt+k"], "command": "move", "args": {"by": "lines", "forward": false} },
-    // { "keys": ["alt+j"], "command": "move", "args": {"by": "lines", "forward": true} },
-
-    // { "keys": ["alt+a"], "command": "move", "args": {"by": "characters", "forward": false} },
-    // { "keys": ["alt+d"], "command": "move", "args": {"by": "characters", "forward": true} },
-    // { "keys": ["alt+w"], "command": "move", "args": {"by": "lines", "forward": false} },
-    // { "keys": ["alt+s"], "command": "move", "args": {"by": "lines", "forward": true} },
-
-    // // vim style word
-    // { "keys": ["ctrl+alt+k"], "command": "move", "args": {"by": "pages", "forward": false} },
-    // { "keys": ["ctrl+alt+j"], "command": "move", "args": {"by": "pages", "forward": true} },
-
-    // { "keys": ["ctrl+alt+k"], "command": "move", "args": {"by": "pages", "forward": false} },
-    // { "keys": ["ctrl+alt+j"], "command": "move", "args": {"by": "pages", "forward": true} },
-
-    // // vim style select words while holding alt
-    // { "keys": ["ctrl+alt+shift+h"], "command": "move", "args": {"by": "words", "forward": false, "extend": true} },
-    // { "keys": ["ctrl+alt+shift+l"], "command": "move", "args": {"by": "word_ends", "forward": true, "extend": true} },
-
-    // // vim style selection while holding alt
-    // { "keys": ["alt+shift+h"], "command": "move", "args": {"by": "characters", "forward": false, "extend": true} },
-    // { "keys": ["alt+shift+l"], "command": "move", "args": {"by": "characters", "forward": true, "extend": true} },
-    // { "keys": ["alt+shift+k"], "command": "move", "args": {"by": "lines", "forward": false, "extend": true} },
-    // { "keys": ["alt+shift+j"], "command": "move", "args": {"by": "lines", "forward": true, "extend": true} },
-
-    // // vim style page up/down while holding ctrl+alt
-    // { "keys": ["ctrl+alt+k"], "command": "move", "args": {"by": "pages", "forward": false} },
-    // { "keys": ["ctrl+alt+j"], "command": "move", "args": {"by": "pages", "forward": true} },
-
-    // // vim style word movement holding alt
-    // { "keys": ["ctrl+alt+h"], "command": "move", "args": {"by": "words", "forward": false} },
-    // { "keys": ["ctrl+alt+l"], "command": "move", "args": {"by": "word_ends", "forward": true} },
-
-    // // wasd cursor movement whlie holding alt
-    // { "keys": ["ctrl+alt+w"], "command": "move", "args": {"by": "pages", "forward": false} },
-    // { "keys": ["ctrl+alt+s"], "command": "move", "args": {"by": "pages", "forward": true} },
-    // { "keys": ["ctrl+alt+a"], "command": "move", "args": {"by": "words", "forward": false} },
-    // { "keys": ["ctrl+alt+d"], "command": "move", "args": {"by": "word_ends", "forward": true} },
-
-    // // vim style page up/down while holding ctrl+alt
-    // { "keys": ["ctrl+shift+alt+k"], "command": "move", "args": {"by": "pages", "forward": false, "extend": true} },
-    // { "keys": ["ctrl+shift+alt+j"], "command": "move", "args": {"by": "pages", "forward": true, "extend": true} },
-
+    {
+        "keys": [
+            "alt+right+4"
+        ],
+        "command": "move_to",
+        "args": {
+            "to": "hardeol",
+            "extend": false
+        }
+    },
+    {
+        "keys": [
+            "alt+right+6"
+        ],
+        "command": "move_to",
+        "args": {
+            "to": "hardbol",
+            "extend": false
+        }
+    },
+    {
+        "keys": [
+            "alt+shift+right+4"
+        ],
+        "command": "move_to",
+        "args": {
+            "to": "hardeol",
+            "extend": true
+        }
+    },
+    {
+        "keys": [
+            "alt+shift+right+6"
+        ],
+        "command": "move_to",
+        "args": {
+            "to": "hardbol",
+            "extend": true
+        }
+    },
+    {
+        "keys": [
+            "alt+ctrl+g"
+        ],
+        "command": "move_to",
+        "args": {
+            "to": "hardbol",
+            "extend": false
+        }
+    },
+    {
+        "keys": [
+            "alt+ctrl+;"
+        ],
+        "command": "move_to",
+        "args": {
+            "to": "hardeol",
+            "extend": false
+        }
+    },
+    {
+        "keys": [
+            "alt+ctrl+shift+g"
+        ],
+        "command": "move_to",
+        "args": {
+            "to": "hardbol",
+            "extend": true
+        }
+    },
+    {
+        "keys": [
+            "alt+ctrl+shift+;"
+        ],
+        "command": "move_to",
+        "args": {
+            "to": "hardeol",
+            "extend": true
+        }
+    },
+    {
+        "keys": [
+            "alt+g"
+        ],
+        "command": "move",
+        "args": {
+            "by": "words",
+            "empty_line": true,
+            "forward": false
+        }
+    },
+    {
+        "keys": [
+            "alt+;"
+        ],
+        "command": "move",
+        "args": {
+            "by": "words",
+            "empty_line": true,
+            "forward": true
+        }
+    },
+    {
+        "keys": [
+            "ctrl+shift+c"
+        ],
+        "command": "toggle_fold_comments"
+    },
 ]
-
