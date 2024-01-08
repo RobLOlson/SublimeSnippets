@@ -27,11 +27,11 @@ my_parser.add_argument(
 )
 
 # Add SUBPARSER
-subparsers = my_parser.add_subparsers(help='sub-command help')
+subparsers = my_parser.add_subparsers(help='Sub command help.')
 
-# create the SUBPARSER for the "a" command
-parser_a = subparsers.add_parser('a', help='a help')
-parser_a.add_argument('bar', type=int, help='bar help')
+# create the SUBPARSER for the "edit" command
+edit_parser = subparsers.add_parser('edit', help='Edit something.')
+edit_parser.add_argument('index', type=int, help='Specify index to edit.')
 
 my_parser.add_argument("-l", "--long", action="store_true", help="enable long")
 

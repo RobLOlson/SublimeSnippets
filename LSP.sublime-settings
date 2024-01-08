@@ -1,14 +1,15 @@
 // Settings in here override those in "LSP/LSP.sublime-settings"
 {
     "show_view_status": true,
-    "show_diagnostics_panel_on_save": 0,
+    "show_diagnostics_panel_on_save": 1,
     "lsp_code_actions_on_save": {
-        "source.fixAll": true,
+        "source.fixAll": false,
+        "source.fixAll.ruff": false,
         "source.organizeImports": true,
     },
-    "show_references_in_quick_panel": true,
+    "show_references_in_quick_panel": false,
     "show_symbol_action_links": false,
     "show_code_actions": "annotation",
     "show_code_lens": "phantom",
-    "lsp_format_on_save": true,
+    "lsp_format_on_save": false,
 }

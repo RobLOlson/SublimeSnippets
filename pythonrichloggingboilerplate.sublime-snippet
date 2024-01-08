@@ -1,10 +1,9 @@
 <snippet>
     <content><![CDATA[
-Hello, ${1:this} is a ${2:snippet}.
 import logging
 from rich.logging import RichHandler
 
-FORMAT = "%(message)s"
+FORMAT = "%(asctime)s %(message)s"
 logging.basicConfig(
     filename="log.log", level=logging.INFO, format=FORMAT, datefmt="[%X]", handlers=[RichHandler()]
 )

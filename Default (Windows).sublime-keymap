@@ -5,13 +5,13 @@
         "keys": [
             "ctrl+shift+g"
         ],
-        "context": [
-            {
-                "key": "selector",
-                "operator": "equal",
-                "operand": "source.python"
-            }
-        ]
+        // "context": [
+        //     {
+        //         "key": "selector",
+        //         "operator": "equal",
+        //         "operand": "source.python"
+        //     }
+        // ]
     },
     // BEGIN LSP COMMANDS
     {
@@ -22,13 +22,20 @@
         "args": {
             "overlay": "command_palette",
             "text": "LSP: ",
-        }
+        },
+    },
+    // Show function signature
+    {
+        "keys": [
+            "ctrl+shift+space",
+        ],
+        "command": "lsp_signature_help_show",
     },
     {
         "keys": [
             "f1"
         ],
-        "command": "lsp_hover",
+        "command": "lsp_signature_help_show",
     },
     {
         "command": "lsp_document_symbols",

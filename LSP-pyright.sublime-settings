@@ -6,5 +6,12 @@
         "python.analysis.autoImportCompletions": true,
         "python.pythonPath": "py",
         "python.venvPath": "C:\\Users\\sterl\\AppData\\Local\\pypoetry\\Cache\\virtualenvs\\",
-    }
+    },
+    "disabled_capabilities": {
+        "signatureHelpProvider": {
+            "triggerCharacters": true,
+            "retriggerCharacters": true,
+        },
+    },
+    "enabled": true,
 }

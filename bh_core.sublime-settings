@@ -1,15 +1,57 @@
 {
+    "user_bracket_styles": {
+        "default": {
+            "color": "brackethighlighter.default",
+            "style": "outline",
+        },
+        "unmatched": {
+            "color": "brackethighlighter.unmatched",
+            "style": "outline",
+        },
+        "curly": {
+            "color": "brackethighlighter.curly",
+            "style": "solid",
+        },
+        "round": {
+            "color": "brackethighlighter.round"
+        },
+        "square": {
+            "color": "brackethighlighter.square"
+        },
+        "angle": {
+            "color": "brackethighlighter.angle"
+        },
+        "tag": {
+            "color": "brackethighlighter.tag"
+        },
+        "c_define": {
+            "color": "brackethighlighter.c_define"
+        },
+        "single_quote": {
+            "color": "brackethighlighter.quote"
+        },
+        "double_quote": {
+            "color": "brackethighlighter.quote"
+        },
+        "regex": {
+            "color": "brackethighlighter.quote"
+        }
+    },
     "high_visibility_enabled_by_default": true,
-    "high_visibility_style": "stippled",
+    "high_visibility_style": "outline",
     "high_visibility_color": "__default__",
-    "scope_brackets":
-    [
+    "content_highlight_bar": true,
+    "align_content_highlight_bar": true,
+    "scope_brackets": [
         {
             "name": "py_double_quote",
             "open": "(?:u|b|f)?r?((?:\"\")?\")",
             "close": "((?:\"\")?\")",
             "style": "double_quote",
-            "scopes": ["string", "meta.string"],
+            "scopes": [
+                "string",
+                "meta.string"
+            ],
             "language_filter": "allowlist",
             "language_list": [
                 "Python",
@@ -25,7 +67,10 @@
             "open": "(?:u|b|f)?r?((?:'')?')",
             "close": "((?:'')?')",
             "style": "single_quote",
-            "scopes": ["string", "meta.string"],
+            "scopes": [
+                "string",
+                "meta.string"
+            ],
             "language_filter": "allowlist",
             "language_list": [
                 "Python",
@@ -36,5 +81,5 @@
             "plugin_library": "bh_modules.pyquotes",
             "enabled": false
         },
-    ]
+    ],
 }

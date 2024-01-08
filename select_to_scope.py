@@ -5,7 +5,8 @@ import sublime_plugin
 
 _MEMORY = []
 
-# !! Renamed "NextModification" from "BetterExpandScope"
+
+# !! Renamed to "NextModification" from "BetterExpandScope"
 # !! Why?  So that LSP's expand will default here
 # !! Because 'ctrl+.' normally points at "next_modification"
 class NextModificationCommand(sublime_plugin.TextCommand):
@@ -33,7 +34,7 @@ class NextModificationCommand(sublime_plugin.TextCommand):
         selection = self.view.sel()
         new_lines_q = False
 
-        # region indeces needed in order to place cursor at start of region
+        # the region indeces needed in order to place cursor at start of region
         a_i = selection[0].a
         b_i = selection[0].b
 
