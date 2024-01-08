@@ -1,0 +1,70 @@
+<snippet>
+    <content><![CDATA[
+from pathlib import Path
+from typing import Optional
+
+import typer
+from typing_extensions import Annotated
+
+app = typer.Typer()
+
+
+@app.command()
+def greet(
+    lastname: Annotated[str, typer.Option(prompt=True)],
+    filename: Optional[Path] = None,
+    name: Annotated[
+        str, typer.Argument(help="Specify name to welcome.", metavar="USER_NAME")
+    ] = "world",
+):
+    """Greets USER_NAME."""
+
+    print(f"Hello {name} {lastname}! {'(saving to file)' if filename else ''}")
+
+
+@app.command("create")
+def create(username: str, age: Annotated[int, typer.Option(min=18, max=256)] = 20):
+    """Create a new user."""
+    print(f"Creating user: {username}, aged {age}.")
+
+
+@app.command("delete")
+def delete(
+    username: str,
+    force: Annotated[
+        bool,
+        typer.Option(prompt="Are you sure you want to delete the user?"),
+    ],
+):
+    """Delete target user."""
+    if force:
+        print(f"Deleting user: {username}")
+    else:
+        print("Operation cancelled")
+
+
+@app.callback(invoke_without_command=True)
+def main(
+    ctx: typer.Context,
+    verbose: Annotated[bool, typer.Option("--verbose", "-v")] = False,
+):
+    """Manage users in the awesome CLI app."""
+
+    if verbose:
+        print("Will write verbose output")
+
+    if ctx.invoked_subcommand is None:
+        print("No command invoked.  Default behavior here.")
+
+    else:
+        print(f"About to execute command: {ctx.invoked_subcommand}")
+
+
+if __name__ == "__main__":
+    app()
+]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+    <tabTrigger>typerBoilerPlate</tabTrigger>
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <scope>source.python</scope>
+</snippet>
