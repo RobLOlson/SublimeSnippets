@@ -55,7 +55,14 @@ class NextModificationCommand(sublime_plugin.TextCommand):
                 and "(" not in self.view.substr(self.view.selection[0].a - 1)
                 and "[" not in self.view.substr(self.view.selection[0].a - 1)
             ):
+                # If selection wants to expand outside of the current line
+                if "\n" not in self.view.substr(
+                    sublime.Region(self.view.selection[0].a, self.view.selection[0].b)
+                ):
+                    self.view.run_command("expand_selection", {"to": "line"})
+                    return
                 self.view.run_command("expand_selection", {"to": "indentation"})
+
             self.view.run_command("expand_selection", {"to": "brackets"})
             selection.add(sublime.Region(selection[0].b, selection[0].a))
 
