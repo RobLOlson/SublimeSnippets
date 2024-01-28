@@ -1,0 +1,29 @@
+# Blocklist files/folders in same directory as the .gitignore file
+/*
+
+# Includelist some files
+!.gitignore
+!README.md
+!*.sublime-snippet
+
+# Ignore all files named .DS_Store or ending with .log
+# **.sublime-settings
+**.db
+
+# Includelist folder/a/b1/ and folder/a/b2/
+# trailing "/" is optional for folders, may match file though.
+# "/" is NOT optional when followed by a *
+!folder/
+folder/*
+!folder/a/
+folder/a/*
+!folder/a/b1/
+!folder/a/b2/
+!folder/a/file.txt
+
+# Adding to the above, this also works...
+!/folder/a/deeply
+/folder/a/deeply/*
+!/folder/a/deeply/nested
+/folder/a/deeply/nested/*
+!/folder/a/deeply/nested/subfolder
