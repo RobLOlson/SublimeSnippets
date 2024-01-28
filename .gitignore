@@ -5,6 +5,7 @@
 !.gitignore
 !README.md
 !*.sublime-snippet
+!*.frozen
 
 # Ignore all files named .DS_Store or ending with .log
 # **.sublime-settings
