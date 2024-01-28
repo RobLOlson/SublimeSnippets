@@ -154,32 +154,34 @@
             "extend": true
         }
     },
+
     // expand scope mathematica style
     // expand scope by tabs
-    {
-        "keys": [
-            "ctrl+shift+."
-        ],
-        "command": "narrow_selection"
-    },
-    // Expand Selection (a replacement for ST's "Expand Selection")
-    {
-        "command": "lsp_expand_selection",
-        "keys": [
-            "ctrl+."
-        ],
-        "context": [
-            {
-                "key": "lsp.session_with_capability",
-                "operator": "equal",
-                "operand": "selectionRangeProvider"
-            }
-        ]
-    },
+    // {
+    //     "keys": [
+    //         "ctrl+shift+."
+    //     ],
+    //     "command": "narrow_selection"
+    // },
+    // // Expand Selection (a replacement for ST's "Expand Selection")
+    // {
+    //     "command": "lsp_expand_selection",
+    //     "keys": [
+    //         "ctrl+."
+    //     ],
+    //     "context": [
+    //         {
+    //             "key": "lsp.session_with_capability",
+    //             "operator": "equal",
+    //             "operand": "selectionRangeProvider"
+    //         }
+    //     ]
+    // },
     // !! Had to rename custom command'better_expand_selection'
     // !! to 'next_modification' so it would play nice with LSP
     // { "keys": ["ctrl+."], "command": "next_modification" },
     // go to next modification (opposite of ctrl+,)
+
     {
         "keys": [
             "ctrl+,"
@@ -529,6 +531,7 @@
         ],
         "command": "toggle_fold_comments"
     },
+
     { "keys": ["ctrl+."], "command": "expand_region" },
     {
       "keys": ["ctrl+shift+."],
