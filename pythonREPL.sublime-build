@@ -1,6 +1,5 @@
 {
-        "target": "run_existing_window_command",
-        "id": "repl_python_run",
-        "selector": "source.python",
-        "file": "config/Python/Main.sublime-menu",
+        "cmd": ["py", "-u", "$file"],
+        "file_regex": "^[ ]*File \"(...*?)\", line ([0-9]*)",
+        "selector": "source.python"
 }

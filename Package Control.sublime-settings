@@ -1,0 +1,33 @@
+{
+	"bootstrapped": true,
+	"in_process_packages":
+	[
+	],
+	"installed_packages":
+	[
+		"AutoFoldCode",
+		"AutoHotkey",
+		"BracketHighlighter",
+		"ExpandRegion",
+		"FindKeyConflicts",
+		"Fold Comments",
+		"GitGutter",
+		"isort",
+		"JavaScript Enhancements",
+		"LSP",
+		"LSP-css",
+		"LSP-json",
+		"LSP-PowerShellEditorServices",
+		"LSP-pyright",
+		"LSP-ruff",
+		"LSP-yaml",
+		"Package Control",
+		"PackageResourceViewer",
+		"PowerShell",
+		"python-black",
+		"requirementstxt",
+		"SideBarEnhancements",
+		"SmarterLineMoves",
+		"TOML",
+	],
+}
