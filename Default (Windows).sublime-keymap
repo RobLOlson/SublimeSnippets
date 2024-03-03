@@ -64,40 +64,7 @@
         ]
     },
     // END LSP COMMANDS
-    // Move Cursor to Start of Line
-    {
-        "keys": [
-            "ctrl+e",
-            "ctrl+shift+e"
-        ],
-        "command": "move_to",
-        "args": {
-            "to": "bol",
-            "extend": false
-        }
-    },
-    {
-        "keys": [
-            "ctrl+e",
-            "ctrl+a"
-        ],
-        "command": "move_to",
-        "args": {
-            "to": "bol",
-            "extend": false
-        }
-    },
-    {
-        "keys": [
-            "ctrl+e",
-            "ctrl+h"
-        ],
-        "command": "move_to",
-        "args": {
-            "to": "bol",
-            "extend": false
-        }
-    },
+
     // Select All Left
     {
         "keys": [
@@ -182,18 +149,18 @@
     // { "keys": ["ctrl+."], "command": "next_modification" },
     // go to next modification (opposite of ctrl+,)
 
-    {
-        "keys": [
-            "ctrl+,"
-        ],
-        "command": "next_modification"
-    },
-    {
-        "keys": [
-            "ctrl+shift+,"
-        ],
-        "command": "prev_modification"
-    },
+    // {
+    //     "keys": [
+    //         "ctrl+,"
+    //     ],
+    //     "command": "next_modification"
+    // },
+    // {
+    //     "keys": [
+    //         "ctrl+shift+,"
+    //     ],
+    //     "command": "prev_modification"
+    // },
     // make a new snippet
     {
         "keys": [
@@ -538,5 +505,47 @@
       "command": "expand_region",
       "args": {"undo": true},
       "context": [{ "key": "expand_region_soft_undo" }]
+    },
+
+    // Move cursor within selection
+    { "keys": ["ctrl+1"], "command": "move_cursor_to_tenth_in_selection","context": [
+        { "key": "selection_empty", "operator": "equal", "operand": false }
+    ] },
+
+    { "keys": ["ctrl+2"], "command": "move_cursor_to_twentieth_in_selection", "context": [
+        { "key": "selection_empty", "operator": "equal", "operand": false }
+    ] },
+    { "keys": ["ctrl+3"], "command": "move_cursor_to_thirtieth_in_selection", "context": [
+        { "key": "selection_empty", "operator": "equal", "operand": false }
+    ] },
+    { "keys": ["ctrl+4"], "command": "move_cursor_to_fortieth_in_selection", "context": [
+        { "key": "selection_empty", "operator": "equal", "operand": false }
+    ] },
+    { "keys": ["ctrl+5"], "command": "move_cursor_to_fiftieth_in_selection", "context": [
+        { "key": "selection_empty", "operator": "equal", "operand": false }
+    ] },
+    { "keys": ["ctrl+m"], "command": "move_cursor_to_fiftieth_in_selection", "context": [
+        { "key": "selection_empty", "operator": "equal", "operand": false }
+    ] },
+    { "keys": ["ctrl+6"], "command": "move_cursor_to_sixtieth_in_selection", "context": [
+        { "key": "selection_empty", "operator": "equal", "operand": false }
+    ] },
+    { "keys": ["ctrl+7"], "command": "move_cursor_to_seventieth_in_selection", "context": [
+        { "key": "selection_empty", "operator": "equal", "operand": false }
+    ] },
+    { "keys": ["ctrl+8"], "command": "move_cursor_to_eightieth_in_selection", "context": [
+        { "key": "selection_empty", "operator": "equal", "operand": false }
+    ] },
+    { "keys": ["ctrl+9"], "command": "move_cursor_to_ninetieth_in_selection", "context": [
+        { "key": "selection_empty", "operator": "equal", "operand": false }
+    ] },
+// </Move Cursor Within Selection>
+    {
+        "keys": ["ctrl+e"],
+        "command": "ace_jump_within_line"
+    },
+    {
+        "keys": ["ctrl+i"],
+        "command": "ace_jump_within_line"
     },
 ]
