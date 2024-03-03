@@ -508,24 +508,25 @@
     },
 
     // Move cursor within selection
-    { "keys": ["ctrl+1"], "command": "move_cursor_to_tenth_in_selection", },
+    { "keys": ["alt+1"], "command": "move_cursor_to_tenth_in_selection", },
 
-    { "keys": ["ctrl+2"], "command": "move_cursor_to_twentieth_in_selection",  },
-    { "keys": ["ctrl+3"], "command": "move_cursor_to_thirtieth_in_selection",  },
-    { "keys": ["ctrl+4"], "command": "move_cursor_to_fortieth_in_selection",  },
-    { "keys": ["ctrl+5"], "command": "move_cursor_to_fiftieth_in_selection",  },
-    { "keys": ["ctrl+m"], "command": "move_cursor_to_fiftieth_in_selection",  },
-    { "keys": ["ctrl+6"], "command": "move_cursor_to_sixtieth_in_selection",  },
-    { "keys": ["ctrl+7"], "command": "move_cursor_to_seventieth_in_selection",  },
-    { "keys": ["ctrl+8"], "command": "move_cursor_to_eightieth_in_selection",  },
-    { "keys": ["ctrl+9"], "command": "move_cursor_to_ninetieth_in_selection" },
+    { "keys": ["alt+2"], "command": "move_cursor_to_twentieth_in_selection",  },
+    { "keys": ["alt+3"], "command": "move_cursor_to_thirtieth_in_selection",  },
+    { "keys": ["alt+4"], "command": "move_cursor_to_fortieth_in_selection",  },
+    { "keys": ["alt+5"], "command": "move_cursor_to_fiftieth_in_selection",  },
+    { "keys": ["alt+m"], "command": "move_cursor_to_fiftieth_in_selection",  },
+    { "keys": ["alt+6"], "command": "move_cursor_to_sixtieth_in_selection",  },
+    { "keys": ["alt+7"], "command": "move_cursor_to_seventieth_in_selection",  },
+    { "keys": ["alt+8"], "command": "move_cursor_to_eightieth_in_selection",  },
+    { "keys": ["alt+9"], "command": "move_cursor_to_ninetieth_in_selection" },
 // </Move Cursor Within Selection>
     {
-        "keys": ["ctrl+e"],
+        "keys": ["alt+i"],
         "command": "ace_jump_within_line"
     },
     {
-        "keys": ["ctrl+i"],
-        "command": "ace_jump_within_line"
+        "keys": ["alt+n"],
+        "command": "ace_jump_char"
     },
+
 ]

@@ -6,6 +6,7 @@
 !README.md
 !*.sublime-snippet
 !*.frozen
+!*.py
 
 # Ignore all files named .DS_Store or ending with .log
 # **.sublime-settings
