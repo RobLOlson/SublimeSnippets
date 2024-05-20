@@ -1,48 +1,51 @@
 {
-	"added_words": [
-		"sqlalchemy",
-		"metadata"
-	],
-	"auto_complete": false, //test
-	"fold_buttons": true,
-	"fade_fold_buttons": false,
-	"auto_complete_delay": 50,
-	"bold_folder_labels": true,
-	"ensure_newline_at_eof_on_save": true,
-	"font_size": 13,
-	"hardware_acceleration": "opengl",
-	"ignored_packages": [
-		"Vintage",
-	],
-	"ignored_words": [
-		"restaurantmenu",
-		"sqlite"
-	],
-	"neovintageous_build_version": 11100,
-	"relative_line_numbers": false,
-	"rulers": [
-		88,
-		100
-	],
-	"auto_complete_commit_on_tab": true,
-	"auto_complete_use_history": true,
-	"auto_complete_trailing_symbols": true,
-	"auto_complete_trailing_spaces": true,
-	"auto_hide_menu": true,
-	"auto_hide_tabs": true,
-	"drag_text": false,
-	"highlight_modified_tabs": true,
-	"hide_new_tab_button": true,
-	"tab_size": 4,
-	"translate_tabs_to_spaces": true,
-	"trim_trailing_white_space_on_save": true,
-	"word_wrap": "true",
-	"index_workers": 0,
-	"color_scheme": "Mariana.sublime-color-scheme",
-	"theme": "auto",
-	"dark_theme": "Default Dark.sublime-theme",
-	"light_theme": "Default Dark.sublime-theme",
-	"show_encoding": true,
-	"index_files": true,
-	"save_on_focus_lost": true,
+    "added_words": [
+        "sqlalchemy",
+        "metadata"
+    ],
+    "auto_complete": false, //test
+    "fold_buttons": true,
+    "fade_fold_buttons": false,
+    "auto_complete_delay": 50,
+    "bold_folder_labels": true,
+    "ensure_newline_at_eof_on_save": true,
+    "font_size": 13,
+    "hardware_acceleration": "opengl",
+    "ignored_packages": [
+        "Vintage",
+    ],
+    "ignored_words": [
+        "restaurantmenu",
+        "sqlite"
+    ],
+    "neovintageous_build_version": 11100,
+    "relative_line_numbers": false,
+    "rulers": [
+        88,
+        100
+    ],
+    "auto_complete_commit_on_tab": true,
+    "auto_complete_use_history": true,
+    "auto_complete_trailing_symbols": true,
+    "auto_complete_trailing_spaces": true,
+    "auto_hide_menu": true,
+    "auto_hide_tabs": true,
+    "drag_text": false,
+    "highlight_modified_tabs": true,
+    "hide_new_tab_button": true,
+    "tab_size": 4,
+    "translate_tabs_to_spaces": true,
+    "trim_trailing_white_space_on_save": "all",
+    "word_wrap": true,
+    "index_workers": 0,
+    "color_scheme": "Mariana.sublime-color-scheme",
+    "theme": "auto",
+    "dark_theme": "Default Dark.sublime-theme",
+    "light_theme": "Default Dark.sublime-theme",
+    "show_encoding": true,
+    "index_files": true,
+    "show_sidebar_on_activated": false,
+    "show_sidebar_on_save": false,
+    "hide_sidebar_change_count_trigger": 5,
+    "save_on_focus_lost": false,
 }
