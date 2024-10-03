@@ -518,7 +518,9 @@
     { "keys": ["alt+6"], "command": "move_cursor_to_sixtieth_in_selection",  },
     { "keys": ["alt+7"], "command": "move_cursor_to_seventieth_in_selection",  },
     { "keys": ["alt+8"], "command": "move_cursor_to_eightieth_in_selection",  },
-    { "keys": ["alt+9"], "command": "move_cursor_to_ninetieth_in_selection" },
+    { "keys": ["alt+9"], "command": "move_cursor_to_ninetieth_in_selection", },
+    { "keys": ["alt+0"], "command": "move_to", "args": {"to": "eol", "extend": false} },
+    { "keys": ["alt+shift+0"], "command": "move_to", "args": {"to": "eol", "extend": true} },
 // </Move Cursor Within Selection>
     {
         "keys": ["alt+i"],
@@ -528,5 +530,22 @@
         "keys": ["alt+n"],
         "command": "ace_jump_char"
     },
+    {
+        "keys": ["alt+space"],
+        "command": "ace_jump_space"
+    },
+    {
+        "keys": ["alt+["],
+        "command": "ace_jump_left_bracket"
+    },
+    {
+        "keys": ["alt+]"],
+        "command": "ace_jump_right_bracket"
+    },
+    { "keys": ["alt+9"], "command": "ace_jump_left_bracket", },
+    { "keys": ["alt+0"], "command": "ace_jump_right_bracket"},
+    { "keys": ["alt+,"], "command": "ace_jump_special"},
+    { "keys": ["alt+."], "command": "ace_jump_quote"},
+
 
 ]

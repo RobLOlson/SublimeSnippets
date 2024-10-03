@@ -7,6 +7,7 @@
 !*.sublime-snippet
 !*.frozen
 !*.py
+!AceJump.sublime-settings
 
 # Ignore all files named .DS_Store or ending with .log
 # **.sublime-settings
