@@ -545,7 +545,16 @@
     { "keys": ["alt+9"], "command": "ace_jump_left_bracket", },
     { "keys": ["alt+0"], "command": "ace_jump_right_bracket"},
     { "keys": ["alt+,"], "command": "ace_jump_special"},
-    { "keys": ["alt+."], "command": "ace_jump_quote"},
+    { "keys": ["alt+."], "command": "ace_jump_special"},
+    { "keys": ["alt+'"], "command": "ace_jump_quote"},
+    { "keys": ["ctrl+shift+s"], "command": "black",
+    "context": [
+            {
+                "key": "selector",
+                "operator": "equal",
+                "operand": "source.python"
+            }
+        ]},
 
 
 ]
