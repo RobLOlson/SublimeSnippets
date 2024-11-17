@@ -15,7 +15,11 @@ class AutoRunPytestOnSave(sublime_plugin.EventListener):
         if not file_path or file_path.suffix != ".py":
             return
 
-        test_path = file_path.parent / "tests" / f"test_{file_path.name}"
+        script_test_path = file_path.parent / "tests" / f"test_{file_path.name}"
+        module_test_path = file_path.absolute().parent.parent / "tests" / f"test_{file_path.name}"
 
-        if test_path.exists():
-            view.window().run_command("exec", {"cmd": f"py -m pytest -s {test_path}"})
+        if script_test_path.exists():
+            view.window().run_command("exec", {"cmd": f"py -m pytest -s {script_test_path}"})
+
+        if module_test_path.exists():
+            view.window().run_command("exec", {"cmd": f"py -m pytest -s {module_test_path}"})
