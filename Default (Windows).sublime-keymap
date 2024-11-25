@@ -231,50 +231,7 @@
     // (normally it scrolls the page w/out moving cursor)
     // { "keys": ["ctrl+up"], "command": "move", "args": {"by": "pages", "forward": false} },
     // { "keys": ["ctrl+down"], "command": "move", "args": {"by": "pages", "forward": true} },
-    // Swap Behavior of switching tabs with CTRL+Tab
-    {
-        "keys": [
-            "ctrl+tab"
-        ],
-        "command": "next_view"
-    },
-    {
-        "keys": [
-            "ctrl+shift+tab"
-        ],
-        "command": "prev_view"
-    },
-    // Move through tabs with wasd
-    {
-        "keys": [
-            "alt+d"
-        ],
-        "command": "next_view"
-    },
-    {
-        "keys": [
-            "alt+a"
-        ],
-        "command": "prev_view"
-    },
-    {
-        "keys": [
-            "alt+w"
-        ],
-        "command": "focus_neighboring_group",
-        "args": {
-            "forward": false
-        }
-    },
-    {
-        "keys": [
-            "alt+s"
-        ],
-        "command": "focus_neighboring_group",
-        "args": {
-            "forward": true
-        }
-    },
+
     // { "keys": ["ctrl+shift+d"], "command": "select_all_exact_matches" },
     {
         "keys": [
@@ -283,52 +240,52 @@
         "command": "select_all_exact_matches"
     },
     // Move cursor by paragraph
-    {
-        "keys": [
-            "ctrl+alt+["
-        ],
-        "command": "move",
-        "args": {
-            "by": "stops",
-            "empty_line": true,
-            "forward": false
-        }
-    },
-    {
-        "keys": [
-            "ctrl+alt+]"
-        ],
-        "command": "move",
-        "args": {
-            "by": "stops",
-            "empty_line": true,
-            "forward": true
-        }
-    },
-    {
-        "keys": [
-            "ctrl+alt+shift+["
-        ],
-        "command": "move",
-        "args": {
-            "by": "stops",
-            "empty_line": true,
-            "extend": true,
-            "forward": false
-        }
-    },
-    {
-        "keys": [
-            "ctrl+shift+alt+]"
-        ],
-        "command": "move",
-        "args": {
-            "by": "stops",
-            "empty_line": true,
-            "extend": true,
-            "forward": true
-        }
-    },
+    // {
+    //     "keys": [
+    //         "ctrl+alt+["
+    //     ],
+    //     "command": "move",
+    //     "args": {
+    //         "by": "stops",
+    //         "empty_line": true,
+    //         "forward": false
+    //     }
+    // },
+    // {
+    //     "keys": [
+    //         "ctrl+alt+]"
+    //     ],
+    //     "command": "move",
+    //     "args": {
+    //         "by": "stops",
+    //         "empty_line": true,
+    //         "forward": true
+    //     }
+    // },
+    // {
+    //     "keys": [
+    //         "ctrl+alt+shift+["
+    //     ],
+    //     "command": "move",
+    //     "args": {
+    //         "by": "stops",
+    //         "empty_line": true,
+    //         "extend": true,
+    //         "forward": false
+    //     }
+    // },
+    // {
+    //     "keys": [
+    //         "ctrl+shift+alt+]"
+    //     ],
+    //     "command": "move",
+    //     "args": {
+    //         "by": "stops",
+    //         "empty_line": true,
+    //         "extend": true,
+    //         "forward": true
+    //     }
+    // },
     // Move cursor by paragraph
     {
         "keys": [
@@ -390,114 +347,109 @@
         "command": "swap_line_down"
     },
     // Move cursor to end of line
-    {
-        "keys": [
-            "alt+right+4"
-        ],
-        "command": "move_to",
-        "args": {
-            "to": "hardeol",
-            "extend": false
-        }
-    },
-    {
-        "keys": [
-            "alt+right+6"
-        ],
-        "command": "move_to",
-        "args": {
-            "to": "hardbol",
-            "extend": false
-        }
-    },
-    {
-        "keys": [
-            "alt+shift+right+4"
-        ],
-        "command": "move_to",
-        "args": {
-            "to": "hardeol",
-            "extend": true
-        }
-    },
-    {
-        "keys": [
-            "alt+shift+right+6"
-        ],
-        "command": "move_to",
-        "args": {
-            "to": "hardbol",
-            "extend": true
-        }
-    },
-    {
-        "keys": [
-            "alt+ctrl+g"
-        ],
-        "command": "move_to",
-        "args": {
-            "to": "hardbol",
-            "extend": false
-        }
-    },
-    {
-        "keys": [
-            "alt+ctrl+;"
-        ],
-        "command": "move_to",
-        "args": {
-            "to": "hardeol",
-            "extend": false
-        }
-    },
-    {
-        "keys": [
-            "alt+ctrl+shift+g"
-        ],
-        "command": "move_to",
-        "args": {
-            "to": "hardbol",
-            "extend": true
-        }
-    },
-    {
-        "keys": [
-            "alt+ctrl+shift+;"
-        ],
-        "command": "move_to",
-        "args": {
-            "to": "hardeol",
-            "extend": true
-        }
-    },
-    {
-        "keys": [
-            "alt+g"
-        ],
-        "command": "move",
-        "args": {
-            "by": "words",
-            "empty_line": true,
-            "forward": false
-        }
-    },
-    {
-        "keys": [
-            "alt+;"
-        ],
-        "command": "move",
-        "args": {
-            "by": "words",
-            "empty_line": true,
-            "forward": true
-        }
-    },
-    {
-        "keys": [
-            "ctrl+shift+c"
-        ],
-        "command": "toggle_fold_comments"
-    },
+    // Deprecated!!
+    // {
+    //     "keys": [
+    //         "alt+right+4"
+    //     ],
+    //     "command": "move_to",
+    //     "args": {
+    //         "to": "hardeol",
+    //         "extend": false
+    //     }
+    // },
+    // {
+    //     "keys": [
+    //         "alt+right+6"
+    //     ],
+    //     "command": "move_to",
+    //     "args": {
+    //         "to": "hardbol",
+    //         "extend": false
+    //     }
+    // },
+    // {
+    //     "keys": [
+    //         "alt+shift+right+4"
+    //     ],
+    //     "command": "move_to",
+    //     "args": {
+    //         "to": "hardeol",
+    //         "extend": true
+    //     }
+    // },
+    // {
+    //     "keys": [
+    //         "alt+shift+right+6"
+    //     ],
+    //     "command": "move_to",
+    //     "args": {
+    //         "to": "hardbol",
+    //         "extend": true
+    //     }
+    // },
+    // {
+    //     "keys": [
+    //         "alt+ctrl+g"
+    //     ],
+    //     "command": "move_to",
+    //     "args": {
+    //         "to": "hardbol",
+    //         "extend": false
+    //     }
+    // },
+    // {
+    //     "keys": [
+    //         "alt+ctrl+;"
+    //     ],
+    //     "command": "move_to",
+    //     "args": {
+    //         "to": "hardeol",
+    //         "extend": false
+    //     }
+    // },
+    // {
+    //     "keys": [
+    //         "alt+ctrl+shift+g"
+    //     ],
+    //     "command": "move_to",
+    //     "args": {
+    //         "to": "hardbol",
+    //         "extend": true
+    //     }
+    // },
+    // {
+    //     "keys": [
+    //         "alt+ctrl+shift+;"
+    //     ],
+    //     "command": "move_to",
+    //     "args": {
+    //         "to": "hardeol",
+    //         "extend": true
+    //     }
+    // },
+    // {
+    //     "keys": [
+    //         "alt+g"
+    //     ],
+    //     "command": "move",
+    //     "args": {
+    //         "by": "words",
+    //         "empty_line": true,
+    //         "forward": false
+    //     }
+    // },
+    // {
+    //     "keys": [
+    //         "alt+;"
+    //     ],
+    //     "command": "move",
+    //     "args": {
+    //         "by": "words",
+    //         "empty_line": true,
+    //         "forward": true
+    //     }
+    // },
 
     { "keys": ["ctrl+."], "command": "expand_region" },
     {
@@ -570,5 +522,27 @@
     { "keys": ["alt+shift+'"], "command": "ace_jump_select_quote"},
     { "keys": ["ctrl+shift+s"], "command": "black"},
 
+    // BEGIN BROWSER STYLE TAB NAVIGATION
 
+    { "keys": ["ctrl+1"], "command": "select_by_index", "args": { "index": 0 } },
+    { "keys": ["ctrl+2"], "command": "select_by_index", "args": { "index": 1 } },
+    { "keys": ["ctrl+3"], "command": "select_by_index", "args": { "index": 2 } },
+    { "keys": ["ctrl+4"], "command": "select_by_index", "args": { "index": 3 } },
+    { "keys": ["ctrl+5"], "command": "select_by_index", "args": { "index": 4 } },
+    { "keys": ["ctrl+6"], "command": "select_by_index", "args": { "index": 5 } },
+
+    {
+        "keys": [
+            "ctrl+tab"
+        ],
+        "command": "next_view"
+    },
+    {
+        "keys": [
+            "ctrl+shift+tab"
+        ],
+        "command": "prev_view"
+    },
+
+    // END OF BROWSER STYLE TAB NAVIGATION
 ]
